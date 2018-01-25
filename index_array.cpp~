@@ -1,0 +1,5 @@
+#include "index_arrayv2.hpp"
+
+IndexArray::IndexArray(GLuint nbr_vertices, GLuint * data) : nbr_vertices(nbr_vertices), index_data(data) {
+  
+}

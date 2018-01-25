@@ -1,0 +1,9 @@
+#include "movable.hpp"
+
+Movable::Movable() : Object() {
+  this->model_buffer = new ModelBuffer();
+  if(this->model_buffer == NULL) {
+    assert(0); //Out of memory! :(
+  }
+  this->add_buffer(new ModelBuffer());
+}

@@ -1,0 +1,5 @@
+#include "viewer.hpp"
+
+void ViewBuffer::Update_phase_function() {
+  
+}

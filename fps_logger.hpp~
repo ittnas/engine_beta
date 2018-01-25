@@ -1,0 +1,9 @@
+#ifndef FPS_LOGGER_HPP
+#define FPS_LOGGER_HPP
+
+class FPSLogger {
+private:
+  
+};
+
+#endif

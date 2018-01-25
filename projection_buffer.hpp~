@@ -1,0 +1,23 @@
+#ifndef PROJECTION_BUFFER_HPP
+#define PROJECTION_BUFFER_HPP
+
+#include "buffer.hpp"
+
+class ProjectionBuffer : Buffer {
+private:
+  static const GLuint buffer_length = 4*16; // Just the projection matrix
+  glm::mat4 projection_matrix;
+protected:
+  static MatrixStack * projection_stack;
+public:
+  ProjectionBuffer() : Buffer("projection_buffer",buffer_length) {}
+  virtual void update_buffer_phase1(Object * parent);
+  //virtual void update_buffer_phase2(Object * parent);
+  //virtual void pre_update_function();
+  //virtual void post_update_function();
+  virtual ~ProjectionBuffer() {}
+  void set_projection();
+};
+
+
+#endif

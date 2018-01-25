@@ -1,0 +1,44 @@
+#ifndef RIGID_BODY_HPP
+#define RIGID_BODY_HPP
+
+#include <glm/glm.hpp>
+#include <GL/glew.h>
+
+#include "object.hpp"
+#include "movable.hpp"
+
+class RigidBody : virtual public Movable {
+private:
+  glm::vec3 center_of_mass;
+  GLfloat inverse_mass; // Calculated from uniform density unless it is set directly
+  GLfloat density; // uniform density, used to update mass.
+  glm::mat3 inverse_moment_of_inertia;
+  glm::vec3 angular_velocity;
+  glm::vec3 velocity;
+  GLuint previous_tick;
+  
+  glm::vec3 calculate_center_of_mass(GLuint attribute_array_index = 0,GLuint density_array_index = -1); // From mesh.
+  void calculate_moment_of_inertia(glm::mat3 & moment_of_inertia, glm::vec3 & center_of_mass,GLfloat & mass,GLuint position_array_index,GLuint density_array_index);
+  void translate_moment_of_inertia(glm::mat3 & moment_of_inertia,const glm::vec3 & distance,GLfloat mass,const glm::vec3 & center_of_mass);
+  void rotate_moment_of_inertia(glm::mat3 & moment_of_inertia, const glm::mat3 & rotation_matrix);
+  void scale_moment_of_inertia(glm::mat3 & moment_inertia, GLfloat scale_factor);
+  glm::mat3 outer(const glm::vec3 &,const glm::vec3 &);
+protected:
+
+public:
+  void update_motion(GLuint tick);
+  void apply_impulse(const glm::vec3 & impulse,const glm::vec3 & position);
+  void apply_impulse(const glm::vec3 & impulse);
+  RigidBody();
+  virtual ~RigidBody() {}
+  void set_uniform_mass(GLfloat mass);
+  void set_uniform_density(GLfloat density);
+  GLboolean set_density_attribute_array(GLuint attribute_array_index);
+  GLboolean set_density_attribute_array(GLuint attribute_array_index, GLfloat total_mass);
+  void move_mesh_to_center_of_mass(GLuint attribute_array_index = 0,GLuint density_array_index = -1);
+  void set_moment_of_inertia_and_mass(GLuint position_array_index = 0,GLuint density_array_index = -1);
+  
+  // void apply_constraint(Constraint *, Movable *) //TODO
+};
+
+#endif

@@ -1,0 +1,47 @@
+#include <GL/glew.h>
+#include "collision_response_algorithms.hpp"
+
+void CollisionResponseAlgorithms::collision_between(CollisionObject *, CollisionObject *,const CollisionPair & cp) {
+  //std::cout << "co vs co" << " (from collision_response_algorithms.cpp)"<< std::endl;
+  // Nothing to be done.
+}
+
+void CollisionResponseAlgorithms::collision_between(CollisionObject *, RigidBody *, const CollisionPair & cp) {
+  //std::cout << "co vs rb" << " (from collision_response_algorithms.cpp)"<< std::endl;
+  // Nothing here either.
+}
+
+void CollisionResponseAlgorithms::collision_between(RigidBody * rb1, RigidBody * rb2, const CollisionPair & cp) {
+  glm::vec3 n = cp.get_normal_of_intersection();
+  GLfloat cor1 = rb1->get_coefficient_of_restitution();
+  GLfloat cor2 = rb2->get_coefficient_of_restitution();
+  GLfloat e = cor1*cor2;
+  glm::vec3 center_of_mass1 = glm::vec3(rb1->get_position()) + rb1->get_center_of_mass();
+  glm::vec3 center_of_mass2 = glm::vec3(rb2->get_position()) + rb2->get_center_of_mass();
+  glm::vec3 vr = rb1->get_velocity() - rb2->get_velocity();
+  glm::vec3 point_of_intersection = cp.get_point_of_intersection();
+  glm::vec3 r1 = cp.get_point_of_intersection() - center_of_mass1;
+  glm::vec3 rhat1 = glm::normalize(r1);
+  glm::vec3 r2 = cp.get_point_of_intersection() - center_of_mass2;
+  glm::vec3 rhat2 = glm::normalize(r2);
+  GLfloat upper = glm::dot(vr,n);
+  GLfloat mass_term1 = rb1->get_inverse_mass()*std::pow(glm::dot(n,rhat1),2);
+  GLfloat mass_term2 = rb2->get_inverse_mass()*std::pow(glm::dot(n,rhat2),2);
+  //GLfloat dot_debug1 = glm::dot(n,r2);
+  //GLfloat dot_debug2 = glm::dot(n,r1);
+  GLfloat inertia = glm::dot(rb1->get_inverse_moment_of_inertia()*(glm::cross(glm::cross(r1,n),r1)) + rb2->get_inverse_moment_of_inertia()*(glm::cross(glm::cross(r2,n),r2)),n);
+  GLfloat j = -(1 + e)*upper/(mass_term1 + mass_term2 + inertia);
+  rb1->apply_impulse(+j*n,cp.get_point_of_intersection());
+  rb2->apply_impulse(-j*n,cp.get_point_of_intersection());
+  
+  rb1->set_position(rb1->get_position() - glm::vec4(n*cp.get_depth_of_intersection()/GLfloat(2.0),0.0));
+  rb2->set_position(rb2->get_position() + glm::vec4(n*cp.get_depth_of_intersection()/GLfloat(2.0),0.0));
+  //rb1->apply_impulse(glm::vec3(-30000,0,0),rb1->get_center_of_mass());
+  //rb2->apply_impulse(glm::vec3(30000,0,0),rb2->get_center_of_mass());
+  //std::cout << "rb vs rb" << " j: " << j << "|" << n.x << ":" << n.y << ":" << n.z <<  " (from collision_response_algorithms.cpp)"<< std::endl;
+}
+
+
+
+
+

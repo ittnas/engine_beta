@@ -1,0 +1,170 @@
+{
+   ignore_unversioned_libs
+   Memcheck:Leak
+   ...
+   obj:*/lib*/*.so
+}
+{
+   ignore_unversioned_libs
+   Memcheck:Cond
+   ...
+   obj:*/lib*/*.so
+}
+{
+   ignore_unversioned_libs
+   Memcheck:Value8
+   ...
+   obj:*/lib*/*.so
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Addr8
+   fun:__GI_memmove
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+   obj:*
+   obj:*
+   obj:*
+   obj:*
+   obj:*
+   obj:*
+   obj:*
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+   obj:*
+   obj:*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Addr8
+   fun:__GI_memmove
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+   obj:*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Addr1
+   fun:__GI_memmove
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+   obj:*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Addr8
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Addr8
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Addr8
+   fun:__GI_memmove
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Addr1
+   fun:__GI_memmove
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Addr4
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Param
+   ioctl(generic)
+   fun:ioctl
+   fun:uki_firegl_UnMapLockPageTableNew
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+   obj:*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Param
+   ioctl(generic)
+   fun:ioctl
+   fun:uki_firegl_ClearDirtyPagesNew
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Param
+   ioctl(generic)
+   fun:ioctl
+   fun:uki_firegl_MapLockPageTableNew
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+   obj:*
+   obj:*
+   obj:*
+   obj:*
+   obj:*
+   obj:*
+   obj:*
+   obj:/usr/lib/valgrind/memcheck-amd64-linux
+   obj:*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Param
+   ioctl(generic)
+   fun:ioctl
+   fun:uki_firegl_MapLockPageTableNew
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+   obj:*
+   obj:*
+   obj:*
+   obj:*
+   obj:*
+   obj:*
+   obj:*
+   obj:/usr/lib/valgrind/memcheck-amd64-linux
+   obj:*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Addr1
+   fun:__GI_memmove
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Addr2
+   fun:__GI_memmove
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+   obj:*
+   obj:*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Addr2
+   fun:__GI_memmove
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Addr2
+   fun:__GI_memmove
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Param
+   ioctl(generic)
+   fun:ioctl
+   fun:ukiCreateContext
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+   obj:*
+   obj:*
+   obj:*
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+   obj:*
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+   obj:*
+   obj:*
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+}
+

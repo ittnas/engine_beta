@@ -1,0 +1,10 @@
+#ifndef WORLD_SWITCH_DRAWER_HPP
+#define WORLD_SWITCH_DRAWER_HPP
+
+#include "drawer.hpp"
+
+class WorldSwitchDrawer : Drawer {
+
+};
+
+#endif

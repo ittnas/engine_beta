@@ -1,0 +1,13 @@
+#include "texture_buffer.hpp"
+
+TextureBuffer::TextureBuffer(Texture * texture) : Buffer("texture_buffer",buffer_length) {
+  this->texture = texture;
+}
+
+void TextureBuffer::update_buffer_phase2(Object * parent) {
+  glBindBuffer(GL_UNIFORM_BUFFER,get_ubo_pointer());
+  for(auto texture : textures) {
+    glBufferSubData(GL_UNIFORM_BUFFER,0,sizeof(GLuint),&(this->texture->get_active_texture_index()));
+    glBindBuffer(GL_UNIFORM_BUFFER,0);
+  }
+}

@@ -1,0 +1,14 @@
+#ifndef OSCILLATOR_ACTION_HPP
+#define OSCILLATOR_ACTION_HPP
+
+#inlucde "action.hpp"
+#include "movable.hpp"
+
+class OscillatorAction : public Action {
+public:
+  OscillatorAction(GLint stop, GLint start);
+  virtual ~OscillatorAction() {}
+  virtual void perform_action(Object * target,GLint time);
+};
+
+#endif

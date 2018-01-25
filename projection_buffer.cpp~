@@ -1,0 +1,7 @@
+#include "projection_buffer.hpp"
+
+virtual void update_buffer_phase1(Object * parent) {
+  glBindBuffer(GL_UNIFORM_BUFFER,get_ubo_pointer());
+  glBufferSubData(GL_UNIFORM_BUFFER,0,sizeof(glm::mat4),glm::value_ptr(projection_matrix));
+  glBindBuffer(GL_UNIFORM_BUFFER,0);
+}

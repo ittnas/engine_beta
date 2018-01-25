@@ -1,0 +1,29 @@
+#ifndef SIMPLE_COLLISION_DETECTOR_HPP
+#define SIMPLE_COLLISION_DETECTOR_HPP
+
+#include <glm/glm.hpp>
+#include <GL/glew.h>
+#include <vector>
+
+#include "aabb.hpp"
+#include "mesh.hpp"
+#include "object.hpp"
+#include "uniform_material.hpp"
+#include "world.hpp"
+
+class SimpleCollisionDetector {
+private:
+  std::vector<UniformMaterial *> objects;
+  std::vector<AABB *> AABBs_from_mesh;
+  std::vector<AABB *> AABBs;
+public:
+  static AABB * generate_AABB(Mesh * mesh, GLuint position_array_index);
+  static void multiply_AABB_with_matrix(AABB * source, AABB * destionation, const glm::mat4 & model_matrix);
+  void add_object(Object * object);
+  void detect_collisions();
+  void apply_transformations();
+  GLboolean collision_takes_place(AABB * obje1, AABB* obj2);
+  SimpleCollisionDetector() {}
+};
+
+#endif

@@ -1,0 +1,40 @@
+#ifndef MODEL_BUFFER_HPP
+#define MODEL_BUFFER_HPP
+
+#include <glm/glm.hpp>
+
+#include "buffer.hpp"
+#include "matrix_stack.hpp"
+
+class ModelBuffer : public Buffer {
+private:
+  static const GLuint buffer_length = 4*(16+12);
+  glm::mat4 model_matrix;
+
+  glm::vec4 position;
+  glm::fquat orientation;
+  glm::vec3 scale;
+
+protected:
+  static MatrixStack * model_stack;
+public:
+  ModelBuffer() : Buffer("model_buffer",buffer_length) {}
+  virtual void update_buffer_phase1(Object * parent);
+  virtual void update_buffer_phase2(Object * parent);
+  virtual void pre_update_function();
+  virtual void post_update_function();
+  virtual ~ModelBuffer() {}
+
+  glm::vec4 get_position() const {return position;}
+  glm::fquat get_orientation() const {return orientation;}
+  glm::vec3 get_scale() const {return scale;}
+
+  void set_position(glm::vec4 position) {this->position = position;}
+  void set_orientation(glm::fquat orientation) {this->orientation = orientation;}
+  void set_scale(glm::vec3 scale) {this->scale =scale;}
+  void set_scale(GLdouble scale) {set_scale(glm::vec3(scale,scale,scale));}
+  void update_model_matrix();
+  //virtual GLuint get_buffer_length();
+};
+
+#endif

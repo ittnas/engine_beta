@@ -1,0 +1,194 @@
+#define NO_SDL_GLEXT
+#include <SDL/SDL.h>
+#include <GL/glew.h>
+#include <GL/glext.h>
+#include <GL/glu.h>
+#include <glm/glm.hpp>
+
+#include <iostream>
+
+#include "model_buffer.hpp"
+#include "projection_buffer.hpp"
+#include "object.hpp"
+#include "world.hpp"
+#include "movable.hpp"
+#include "light.hpp"
+#include "moving_object_test.hpp"
+#include "camera.hpp"
+#include "flying_camera.hpp"
+#include "tetrahedron.hpp"
+#include "viewer.hpp"
+#include "key_table.hpp"
+#include "key_action.hpp"
+
+#define SCREEN_W 1920
+#define SCREEN_H 1080
+#define BITS_PER_PIXEL 32
+
+KeyTable * kt;
+SDL_Event event;
+const GLdouble aspect_ratio = SCREEN_W / SCREEN_H;
+//const GLdouble fps = 60;
+//const GLuint frame_length = 1000/60 // in milliseconds
+
+void key_event() {
+  
+  // Poll whether a key has been pressed.
+    GLubyte action = 0;
+    if(SDL_PollEvent(&event) && (event.type == SDL_KEYDOWN || event.type == SDL_KEYUP)) {
+      GLubyte action = 0;
+      if(event.type == SDL_KEYDOWN) {
+	action = 1;
+      } else {
+	action = 0;
+      }
+      kt->set_status(event.key.keysym.sym,action);
+      /*
+      switch(event.key.keysym.sym) {
+	
+      case SDLK_LEFT:
+	key_table[0] = action;
+	//camera_orient[3] += rotation;
+	break;
+      case SDLK_RIGHT:
+	key_table[1] = action;
+	//camera_orient[3] -= rotation;
+	break;
+      case SDLK_UP:
+	key_table[2] = action;
+	
+      //camera_orient[4] += rotation;
+	break;
+      case SDLK_DOWN:
+	key_table[3] = action;
+	//camera_orient[4] -= rotation;
+	break;
+      case SDLK_w:
+	key_table[4] = action;
+	//move(1);
+	break;
+      
+      case SDLK_s:
+	key_table[5] = action;
+	//      move(-1);
+	break;
+      case SDLK_a:
+	key_table[6] = action;
+	//      camera_orient[5] -= rotation;
+	break;
+      case SDLK_d:
+      key_table[7] = action;
+      //      camera_orient[5] += rotation;
+      break;
+      case SDLK_ESCAPE:
+	SDL_Quit();
+	return;
+       
+      }
+      */
+      
+    }
+    
+}
+
+void init_GL() {
+
+  //First init sdl
+  GLint init_success = SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER);
+  assert(~init_success); //0 for success, -1 for failure
+  SDL_Surface * screen = SDL_SetVideoMode(SCREEN_W, SCREEN_H,BITS_PER_PIXEL, SDL_OPENGL); //SDL_Surface creates the opengl context, and therefore needs to be called before glewInit();
+  
+  // And then glew
+  GLenum err = glewInit();
+  if( GLEW_OK != err )
+    {
+      fprintf(stderr, "Error initializing GLEW: %s\n", glewGetErrorString(err) );
+      assert(0);
+    }
+}
+
+int main() {
+  init_GL();
+
+  kt = new KeyTable();
+  ModelBuffer * buffer = new ModelBuffer();
+  ModelBuffer * buffer2 = new ModelBuffer();
+
+  Object * object = new Object();
+  Object * object2 = new Object();
+  object->set_render_flag(LIGHTABLE | SHADOWABLE);
+  object->render(0,SHADOWABLE | LIGHTABLE,0,AND);
+  object->add_child(object2);
+ 
+  World * world = new World();
+  //  world->add_child(object);
+  object->remove_child(object2);
+  world->set_projection(ProjectionBuffer::create_perspective_projection_matrix(-1/aspect_ratio,1/aspect_ratio,-1,1,1.0,50,100));
+
+  //Movable * mv = new Movable();
+  //MovingObjectTest * mv = new MovingObjectTest();
+  Camera * mv = new FlyingCamera();
+  mv->set_position(glm::vec4(0,0,-9.0,1));
+  mv->add_action(new KeyAction(-1,-1));
+  //mv->render(0);
+  
+  //GLint max_nbr;
+  //glGetIntegerv(GL_MAX_GEOMETRY_UNIFORM_BLOCKS,&max_nbr);
+  //std::cout << max_nbr << std::endl;
+  Tetrahedron * tetr = new Tetrahedron();
+  Program * prog = new Program("simple_prog.vert","simple_prog.frag");
+  prog->list_uniforms();
+  //mv->set_program(prog);
+  //mv->set_shape(tetr);
+  world->add_child(mv);
+  //World * new_world = new World();
+  //World::action_on_worlds();
+  //mv->render(0);
+  //World::action_on_worlds();
+  Movable * movable = new Movable();
+  movable->set_shape(tetr);
+  movable->set_position(glm::vec4(0,0,-10,1));
+  movable->set_program(prog);
+  Light * light = new Light();
+  light->set_shape(tetr);
+  light->set_position(glm::vec4(0,0.2,0.1,1));
+  light->set_program(prog);
+  light->set_intensity(glm::vec4(0.1,0,0,1));
+
+  mv->set_program(prog);
+  world->add_child(movable);
+  world->set_program(prog);
+  world->add_child(light);
+  
+
+
+  glClearColor(0.0,0.0,0.0,0.0);
+ 
+  SDL_Event event;
+  KeyTable * key_table = new KeyTable();
+  GLuint tick = -1;
+  GLuint previous_tick = -1;
+  GLdouble fps = 0;
+  while(true) {
+    tick = SDL_GetTicks();
+    if(previous_tick != -1 && tick != previous_tick) {
+      fps = 1000/(tick - previous_tick);
+      std::cout << "fps: " << fps << std::endl;
+    }
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    World::action_on_worlds(tick);
+    glViewport(0,0,SCREEN_W/2,SCREEN_H);
+    world->draw_world(0);
+    glViewport(SCREEN_W/2,0,SCREEN_W/2,SCREEN_H);
+    world->draw_world(0);
+    SDL_GL_SwapBuffers();
+    //SDL_Delay(10);
+    key_event();
+    if(key_table->get_status(SDLK_ESCAPE)) {
+      SDL_Quit();
+      return 0;
+    }
+    previous_tick = tick;
+  }
+    return 0;
+}

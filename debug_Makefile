@@ -1,0 +1,12 @@
+CC = g++
+CFLAGS = -g -std=c++0x -I/usr/include/freetype2
+LIBS = -lSDL -lGL -lGLU -lGLEW -lpng -lfreetype
+DEPS = buffer.hpp ubo.hpp model_buffer.hpp drawer.hpp action.hpp object.hpp program.hpp shape.hpp mesh.hpp render_flag.hpp attribute_array.hpp edge.hpp index_array.hpp matrix_stack.hpp projection_buffer.hpp view_buffer.hpp tetrahedron.hpp viewer.hpp drawer.hpp key_table.hpp light_manager.hpp lightning_buffer.hpp manager.hpp uniform_material_buffer.hpp buffer_list.hpp parametric_plot.hpp parametric_functions.hpp global_context.hpp firework_shape.hpp firework_buffer.hpp killer_action.hpp opengl_data_type_enum_length.hpp movable.hpp world.hpp update_time_action.hpp camera.hpp #texture.hpp texture1D.hpp texture_buffer.hpp
+
+OBJ = buffer.o ubo.o debug_main.o model_buffer.o drawer.o action.o object.o program.o shape.o mesh.o attribute_array.o index_array.o matrix_stack.o projection_buffer.o view_buffer.o tetrahedron.o viewer.o drawer.o key_table.o light_manager.o lightning_buffer.cpp uniform_material_buffer.o buffer_list.o parametric_plot.o global_context.o firework_shape.o firework_buffer.o killer_action.o opengl_data_type_enum_length.o world.o update_time_action.o camera.o movable.o #texture.o texture1D.o texture_buffer.o
+
+%.o: %.cpp $(DEPS)
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+main: $(OBJ)
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)

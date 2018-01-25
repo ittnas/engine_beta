@@ -1,0 +1,16 @@
+#ifndef UNIFORM_MATERIAL_HPP
+#define UNIFORM_MATERIAL_HPP
+
+#include "object.hpp"
+#include "uniform_material_buffer.hpp"
+#include "movable.hpp"
+
+class UniformMaterial : virtual public Object, virtual public Movable {
+private:
+  UniformMaterialBuffer * uniform_material_buffer;
+public:
+  UniformMaterial();
+  virtual ~UniformMaterial() {}
+};
+
+#endif

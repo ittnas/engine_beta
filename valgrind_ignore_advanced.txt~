@@ -1,0 +1,15 @@
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   ...
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+   ...
+}
+
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   ...
+   obj:/usr/lib/fglrx/dri/fglrx_dri.so
+   ...
+}

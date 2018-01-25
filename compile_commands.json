@@ -1,0 +1,397 @@
+[
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o buffer.o /home/ittnas/Projects/engine_beta/buffer.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/buffer.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o ubo.o /home/ittnas/Projects/engine_beta/ubo.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/ubo.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o main.o /home/ittnas/Projects/engine_beta/main.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/main.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o model_buffer.o /home/ittnas/Projects/engine_beta/model_buffer.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/model_buffer.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o drawer.o /home/ittnas/Projects/engine_beta/drawer.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/drawer.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o action.o /home/ittnas/Projects/engine_beta/action.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/action.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o object.o /home/ittnas/Projects/engine_beta/object.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/object.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o program.o /home/ittnas/Projects/engine_beta/program.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/program.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o shape.o /home/ittnas/Projects/engine_beta/shape.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/shape.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o mesh.o /home/ittnas/Projects/engine_beta/mesh.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/mesh.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o attribute_array.o /home/ittnas/Projects/engine_beta/attribute_array.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/attribute_array.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o index_array.o /home/ittnas/Projects/engine_beta/index_array.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/index_array.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o matrix_stack.o /home/ittnas/Projects/engine_beta/matrix_stack.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/matrix_stack.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o world.o /home/ittnas/Projects/engine_beta/world.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/world.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o projection_buffer.o /home/ittnas/Projects/engine_beta/projection_buffer.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/projection_buffer.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o movable.o /home/ittnas/Projects/engine_beta/movable.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/movable.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o camera.o /home/ittnas/Projects/engine_beta/camera.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/camera.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o view_buffer.o /home/ittnas/Projects/engine_beta/view_buffer.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/view_buffer.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o tetrahedron.o /home/ittnas/Projects/engine_beta/tetrahedron.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/tetrahedron.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o viewer.o /home/ittnas/Projects/engine_beta/viewer.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/viewer.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o key_table.o /home/ittnas/Projects/engine_beta/key_table.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/key_table.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o flying_camera.o /home/ittnas/Projects/engine_beta/flying_camera.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/flying_camera.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o key_action.o /home/ittnas/Projects/engine_beta/key_action.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/key_action.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o light_manager.o /home/ittnas/Projects/engine_beta/light_manager.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/light_manager.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o light.o /home/ittnas/Projects/engine_beta/light.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/light.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o uniform_material_buffer.o /home/ittnas/Projects/engine_beta/uniform_material_buffer.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/uniform_material_buffer.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o buffer_list.o /home/ittnas/Projects/engine_beta/buffer_list.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/buffer_list.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o parametric_plot.o /home/ittnas/Projects/engine_beta/parametric_plot.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/parametric_plot.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o global_context.o /home/ittnas/Projects/engine_beta/global_context.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/global_context.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o update_time_action.o /home/ittnas/Projects/engine_beta/update_time_action.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/update_time_action.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o firework_shape.o /home/ittnas/Projects/engine_beta/firework_shape.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/firework_shape.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o firework_shooter.o /home/ittnas/Projects/engine_beta/firework_shooter.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/firework_shooter.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o firework_buffer.o /home/ittnas/Projects/engine_beta/firework_buffer.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/firework_buffer.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o firework.o /home/ittnas/Projects/engine_beta/firework.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/firework.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o firework_action.o /home/ittnas/Projects/engine_beta/firework_action.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/firework_action.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o killer_action.o /home/ittnas/Projects/engine_beta/killer_action.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/killer_action.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o text_object.o /home/ittnas/Projects/engine_beta/text_object.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/text_object.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o opengl_data_type_enum_length.o /home/ittnas/Projects/engine_beta/opengl_data_type_enum_length.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/opengl_data_type_enum_length.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o texture.o /home/ittnas/Projects/engine_beta/texture.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/texture.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o texture1D.o /home/ittnas/Projects/engine_beta/texture1D.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/texture1D.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o texture_buffer.o /home/ittnas/Projects/engine_beta/texture_buffer.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/texture_buffer.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o texture2D_object.o /home/ittnas/Projects/engine_beta/texture2D_object.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/texture2D_object.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o texture2D.o /home/ittnas/Projects/engine_beta/texture2D.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/texture2D.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o uniform_list.o /home/ittnas/Projects/engine_beta/uniform_list.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/uniform_list.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o texture_uniform_container.o /home/ittnas/Projects/engine_beta/texture_uniform_container.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/texture_uniform_container.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o oscillator_action.o /home/ittnas/Projects/engine_beta/oscillator_action.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/oscillator_action.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o character_object.o /home/ittnas/Projects/engine_beta/character_object.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/character_object.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o rectangle.o /home/ittnas/Projects/engine_beta/rectangle.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/rectangle.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o rendering_function.o /home/ittnas/Projects/engine_beta/rendering_function.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/rendering_function.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o physics_manager.o /home/ittnas/Projects/engine_beta/physics_manager.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/physics_manager.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o simple_collision_detector.o /home/ittnas/Projects/engine_beta/simple_collision_detector.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/simple_collision_detector.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o aabb.o /home/ittnas/Projects/engine_beta/aabb.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/aabb.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o cube.o /home/ittnas/Projects/engine_beta/cube.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/cube.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o rigid_body.o /home/ittnas/Projects/engine_beta/rigid_body.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/rigid_body.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o bounding_geometry.o /home/ittnas/Projects/engine_beta/bounding_geometry.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/bounding_geometry.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o collision_object.o /home/ittnas/Projects/engine_beta/collision_object.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/collision_object.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o bounding_geometry_generation_algorithms.o /home/ittnas/Projects/engine_beta/bounding_geometry_generation_algorithms.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/bounding_geometry_generation_algorithms.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o parametric_functions.o /home/ittnas/Projects/engine_beta/parametric_functions.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/parametric_functions.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o uniform_color_collision_object.o /home/ittnas/Projects/engine_beta/uniform_color_collision_object.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/uniform_color_collision_object.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o parametric_surface_generator.o /home/ittnas/Projects/engine_beta/parametric_surface_generator.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/parametric_surface_generator.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o collision_hierarchy.o /home/ittnas/Projects/engine_beta/collision_hierarchy.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/collision_hierarchy.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o collision_hierarchy_node.o /home/ittnas/Projects/engine_beta/collision_hierarchy_node.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/collision_hierarchy_node.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o collision_pair.o /home/ittnas/Projects/engine_beta/collision_pair.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/collision_pair.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o collision_detector.o /home/ittnas/Projects/engine_beta/collision_detector.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/collision_detector.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o simple_collision_hierarchy.o /home/ittnas/Projects/engine_beta/simple_collision_hierarchy.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/simple_collision_hierarchy.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o collision_callback_function.o /home/ittnas/Projects/engine_beta/collision_callback_function.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/collision_callback_function.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o collision_response_algorithms.o /home/ittnas/Projects/engine_beta/collision_response_algorithms.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/collision_response_algorithms.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o collision_detection_algorithms.o /home/ittnas/Projects/engine_beta/collision_detection_algorithms.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/collision_detection_algorithms.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o cuboid.o /home/ittnas/Projects/engine_beta/cuboid.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/cuboid.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o force.o /home/ittnas/Projects/engine_beta/force.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/force.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o physics_object.o /home/ittnas/Projects/engine_beta/physics_object.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/physics_object.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o triangle.o /home/ittnas/Projects/engine_beta/triangle.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/triangle.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o basic_geometry_shapes.o /home/ittnas/Projects/engine_beta/basic_geometry_shapes.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/basic_geometry_shapes.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o mesh_algorithms.o /home/ittnas/Projects/engine_beta/mesh_algorithms.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/mesh_algorithms.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o debug_utility_functions.o /home/ittnas/Projects/engine_beta/debug_utility_functions.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/debug_utility_functions.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o fps_logger.o /home/ittnas/Projects/engine_beta/fps_logger.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/fps_logger.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o fps_text_object.o /home/ittnas/Projects/engine_beta/fps_text_object.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/fps_text_object.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o main buffer.o ubo.o main.o model_buffer.o drawer.o action.o object.o program.o shape.o mesh.o attribute_array.o index_array.o matrix_stack.o world.o projection_buffer.o movable.o camera.o view_buffer.o tetrahedron.o viewer.o key_table.o flying_camera.o key_action.o light_manager.o light.o uniform_material_buffer.o buffer_list.o parametric_plot.o global_context.o update_time_action.o firework_shape.o firework_shooter.o firework_buffer.o firework.o firework_action.o killer_action.o text_object.o opengl_data_type_enum_length.o texture.o texture1D.o texture_buffer.o texture2D_object.o texture2D.o uniform_list.o texture_uniform_container.o oscillator_action.o character_object.o rectangle.o rendering_function.o physics_manager.o simple_collision_detector.o aabb.o cube.o rigid_body.o bounding_geometry.o collision_object.o bounding_geometry_generation_algorithms.o parametric_functions.o uniform_color_collision_object.o parametric_surface_generator.o collision_hierarchy.o collision_hierarchy_node.o collision_pair.o collision_detector.o simple_collision_hierarchy.o collision_callback_function.o collision_response_algorithms.o collision_detection_algorithms.o cuboid.o force.o physics_object.o triangle.o basic_geometry_shapes.o mesh_algorithms.o debug_utility_functions.o fps_logger.o fps_text_object.o /home/ittnas/Projects/engine_beta/lightning_buffer.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/lightning_buffer.cpp"
+    },
+    {
+        "command": "c++ -c -g -std=c++11 -I/usr/include/freetype2 -o main buffer.o ubo.o main.o model_buffer.o drawer.o action.o object.o program.o shape.o mesh.o attribute_array.o index_array.o matrix_stack.o world.o projection_buffer.o movable.o camera.o view_buffer.o tetrahedron.o viewer.o key_table.o flying_camera.o key_action.o light_manager.o light.o uniform_material_buffer.o buffer_list.o parametric_plot.o global_context.o update_time_action.o firework_shape.o firework_shooter.o firework_buffer.o firework.o firework_action.o killer_action.o text_object.o opengl_data_type_enum_length.o texture.o texture1D.o texture_buffer.o texture2D_object.o texture2D.o uniform_list.o texture_uniform_container.o oscillator_action.o character_object.o rectangle.o rendering_function.o physics_manager.o simple_collision_detector.o aabb.o cube.o rigid_body.o bounding_geometry.o collision_object.o bounding_geometry_generation_algorithms.o parametric_functions.o uniform_color_collision_object.o parametric_surface_generator.o collision_hierarchy.o collision_hierarchy_node.o collision_pair.o collision_detector.o simple_collision_hierarchy.o collision_callback_function.o collision_response_algorithms.o collision_detection_algorithms.o cuboid.o force.o physics_object.o triangle.o basic_geometry_shapes.o mesh_algorithms.o debug_utility_functions.o fps_logger.o fps_text_object.o /home/ittnas/Projects/engine_beta/uniform_material.cpp",
+        "directory": "/home/ittnas/Projects/engine_beta",
+        "file": "/home/ittnas/Projects/engine_beta/uniform_material.cpp"
+    }
+]

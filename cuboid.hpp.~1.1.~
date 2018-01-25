@@ -1,0 +1,11 @@
+#ifndef CUBOID_HPP
+#define CUBOID_HPP
+
+#include "shape.hpp"
+
+// TODO nothing is done.
+class Cuboid : public Shape {
+private:
+  GLfloat 
+};
+#endif

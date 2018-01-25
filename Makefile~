@@ -1,0 +1,11 @@
+CC = g++
+CFLAGS = -g -std=c++0x
+LIBS = -lSDL -lGL -lGLU -lGLEW -lpng
+DEPS = buffer.hpp ubo.hpp model_buffer.hpp drawer.hpp action.hpp object.hpp program.hpp shape.hpp mesh.hpp render_flag.hpp attribute_array.hpp edge.hpp index_array.hpp matrix_stack.hpp world.hpp projection_buffer.hpp movable.hpp camera.hpp view_buffer.hpp tetrahedron.hpp viewer.hpp drawer.hpp key_table.hpp flying_camera.hpp key_action.hpp light_manager.hpp lightning_buffer.hpp light.hpp manager.hpp
+OBJ = buffer.o ubo.o main.o model_buffer.o drawer.o action.o object.o program.o shape.o mesh.o attribute_array.o index_array.o matrix_stack.o world.o projection_buffer.o movable.o camera.o view_buffer.o tetrahedron.o viewer.o drawer.o key_table.o flying_camera.o key_action.o light_manager.o lightning_buffer.cpp light.o
+
+%.o: %.cpp $(DEPS)
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+main: $(OBJ)
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)

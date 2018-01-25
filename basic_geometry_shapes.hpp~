@@ -1,0 +1,10 @@
+#ifndef BASIC_GEOMETRY_SHAPES_HPP
+#define BASIC_GEOMETRY_SHAPES_HPP
+
+#include "shape.hpp"
+
+class RayShape : public Shape {
+  
+};
+
+#endif

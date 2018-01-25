@@ -1,0 +1,15 @@
+#ifndef KEY_ACTION_HPP
+#define KEY_ACTION_HPP
+
+#include "action.hpp"
+
+class KeyAction : public Action {
+private:
+  
+public:
+  Action(GLint stop = -1, GLint start = -1);
+  virtual ~Action() {}
+  virtual void perform_action(Object * target, GLint time);
+};
+
+#endif

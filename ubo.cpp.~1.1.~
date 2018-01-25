@@ -1,0 +1,7 @@
+#include <string>
+
+#include "ubo.hpp"
+
+UBO::UBO(std::string ubo_name, GLuint binding_point, GLuint ubo_pointer) : ubo_name(ubo_name),binding_point(binding_point),ubo_pointer(ubo_pointer) {
+
+}

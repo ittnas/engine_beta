@@ -1,0 +1,27 @@
+#include "force.hpp"
+
+Force::Force(ForceType type) : force_type(type) {
+
+} 
+
+glm::vec3 Force::get_strength(const glm::vec3 & position) const {
+  return get_strength_sub_class(position);
+}
+
+ConstantForce::ConstantForce(ForceType type, glm::vec3 force_vector) : Force(type),force_vector(force_vector) {
+  
+}
+
+glm::vec3 ConstantForce::get_strength_sub_class(const glm::vec3 & position) const {
+  return force_vector;
+}
+
+
+
+
+
+
+
+
+
+

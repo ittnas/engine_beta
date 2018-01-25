@@ -1,0 +1,14 @@
+#ifndef COLLISION_DETECTOR_HPP
+#define COLLISION_DETECTOR_HPP
+
+#include "manager.hpp"
+//#include "collision_handler.hpp"
+
+class CollisionDetector : public Manager {
+private:
+  
+  //CollisionHandeler * collision_handler;
+public:
+  //virtual void generate_bounding_volume();  
+};
+#endif

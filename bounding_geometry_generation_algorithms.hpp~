@@ -1,0 +1,11 @@
+#ifndef BOUNDING_GEOMETRY_GENERATION_ALGORITHMS_HPP
+#define BOUNDING_GEOMETRY_GENERATION_ALGORITHMS_HPP
+
+#include "bounding_geometry.hpp"
+
+typedef BoundingSphere * (*BoundingSphereFromAabbAlgorithm)(const BoundingAABB &); // Typedef should be in algorithms.h
+typedef BoundingSphere * (*BoundingSphereFromSphereAlgorithm)(const BoundingSphere &);
+typedef BoundingSphere * (*BoundingSphereFromObbAlgorithm)(const BoundingOBB &);
+typedef BoundingSphere * (*BoundingSphereFromPointsAlgorithm)(const std::vector<glm::vec4> &);
+
+#endif

@@ -1,0 +1,17 @@
+#ifndef TEXTURE_BUFFER_HPP
+#define TEXTURE_BUFFER_HPP
+
+#include "buffer.hpp"
+
+class TextureBuffer : public Buffer {
+private:
+  std::vector<Texture *> textures; // Contains all the properties of a texture.
+  static GLuint buffer_length = sizeof(GLuint);
+public:
+  TextureBuffer(Texture * texture);
+  virtual ~TextureBuffer() {}
+  void update_buffer_phase2(Object * parent);
+  Texture * get_texture() const {return texture;}
+};
+
+#endif

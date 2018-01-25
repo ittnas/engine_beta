@@ -1,0 +1,9 @@
+#include "collision_pair.hpp"
+
+CollisionPair::CollisionPair(CollisionObject * c01, CollisionObject * co2, glm::vec3 point_of_intersection, glm::vec3 normal_of_intersection, GLfloat depth_of_intersection) : c01(c01), co2(co2), point_of_intersection(point_of_intersection), normal_of_intersection(normal_of_intersection), depth_of_intersection(depth_of_intersection) {
+  
+}
+
+std::pair<CollisionObject *, CollisionObject *> CollisionPair::get_colliding_objects() const {
+  return std::make_pair<co1,co2>;
+}

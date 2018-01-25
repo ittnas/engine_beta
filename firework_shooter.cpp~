@@ -1,0 +1,29 @@
+#include <glm/glm.hpp>
+
+#include "firework_shooter.hpp"
+#include "firework_shape.hpp"
+#include "firework.hpp"
+#include "firework_action.hpp"
+#include "killer_action.hpp"
+
+FireworkShooter::FireworkShooter() : Object(), Movable(), current_index(0) {
+  n = 15;
+  for(GLuint i= 0; i < n; i++) {
+    fireworks.push_back(new FireworkShape(5000,0.8,0.2,glm::vec3(0,0.0,1.0),glm::vec3(0,0.1,0.2)));
+  }
+  this->add_action(new FireworkAction(-1,-1));
+  this->fwprog = new Program("firework.vert","firework.frag");
+  this->killer_action = new KillerAction(15000,-1,-1);
+}
+
+GLvoid FireworkShooter::fire_next(GLfloat time) {
+  Firework * fw = new Firework();
+  fw->set_shape(fireworks[current_index % n]);
+  fw->set_position(glm::vec4(0,0,0,1));
+  fw->set_initial_velocity(glm::vec3(1,1,0));
+  fw->set_creation_time(time);
+  fw->set_explosion_time(time + 3);
+  fw->set_program(fwprog);
+  fw->add_action(killer_action);
+  this->add_child(fw);
+}

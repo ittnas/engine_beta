@@ -1,0 +1,37 @@
+#include "buffer_list.hpp"
+
+GLuint Buffer::unique_binding_point_counter = 0;
+std::unordered_map<std::string,UBO *> Buffer::initialized_buffers;
+
+UBO * Buffer::init_ubo(std::string ubo_name, GLuint buffer_length,GLint buffer_update_frequency) {
+  GLuint ubo_pointer = create_buffer(buffer_length,buffer_update_frequency);
+  GLuint binding_point = generate_unique_binding_point();
+  glBindBufferRange(GL_UNIFORM_BUFFER,binding_point,ubo_pointer,0,buffer_length);
+  UBO * ubo = new UBO(ubo_name,binding_point,ubo_pointer);
+  return ubo;
+}
+
+GLuint Buffer::generate_unique_binding_point() {
+  GLuint new_binding_point = unique_binding_point_counter;
+  unique_binding_point_counter++;
+  assert(new_binding_point < MAX_NBR_BINDING_POINTS);
+  return new_binding_point;
+}
+
+/**
+Creates a new uniform buffer object (UBO) with size buffer_size (in bytes) and update frequency hint buffer_update_frequency. OpenGL pointer to the UBO is returned.
+ **/
+
+GLuint Buffer::create_buffer(GLuint buffer_size, GLint buffer_update_frequency) {
+  GLuint ubo_pointer;
+  GLubyte * empty = new GLubyte[buffer_size];
+  for(GLuint i = 0; i < buffer_size; i++) {
+    empty[i] = 0;
+  }
+  glGenBuffers(1,&ubo_pointer);
+  glBindBuffer(GL_UNIFORM_BUFFER,ubo_pointer);
+  glBufferData(GL_UNIFORM_BUFFER,buffer_size,empty,buffer_update_frequency);
+  glBindBuffer(GL_UNIFORM_BUFFER,0);
+  delete[] empty;
+  return ubo_pointer;
+}

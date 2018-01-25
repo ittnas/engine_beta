@@ -1,0 +1,57 @@
+#include "rendering_function.hpp"
+#include "light_manager.hpp"
+#include "camera.hpp"
+#include "world.hpp"
+
+void RenderingFunction::set_target_camera(Camera * camera) {
+  if(camera != 0) {
+    target_camera = camera;
+    target_world = camera->get_world();
+  }
+}
+
+void OITRenderingFunction::perform_rendering(GLint tick, GLuint render_flag, GLuint current_program, Comparator comp) {
+  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+  this->target_camera->select_render_target();
+  this->target_camera->draw(tick,TRANSPARENT,current_program,NOT);
+  this->target_camera->update_world(); // Addition of this line prevents the flickering of the scene. Apparently some values are lost from the shaders (maybe?) after the rendering pass and they need to be releaded for the next one.
+  this->target_camera->draw(tick,TRANSPARENT,current_program,AND);
+}
+
+void ShadowVolumesRenderingFunction::perform_rendering(GLint tick, GLuint render_flag, GLuint current_program, Comparator comp) {
+  this->target_camera->select_render_target();
+
+  //glEnable( GL_LINE_SMOOTH );
+  //glEnable( GL_POLYGON_SMOOTH );
+  //glHint( GL_LINE_SMOOTH_HINT, GL_NICEST );
+  //glHint( GL_POLYGON_SMOOTH_HINT, GL_NICEST );
+
+  glDisable(GL_BLEND);
+  glEnable(GL_DEPTH_TEST); // Activate the depth test
+  glDepthMask(GL_TRUE);  // Writing on z-buffer
+  glDepthFunc(GL_LESS); // We change the z-testing function to LESS, to avoid little bugs in shadow
+  glCullFace(GL_BACK);
+  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+  this->target_camera->draw(tick,SHADOWABLE|SHADOWCASTER,current_program,NOT);
+  
+  LightManager * lm = this->target_camera->get_world()->get_light_manager();
+  auto lights = lm->get_lights();
+  for(auto & light : lights) {
+    light.first->disable();
+  }
+  this->target_camera->update_world(); // Addition of this line prevents the flickering of // TODO: he scene. Apparently some values are lost from the shaders (maybe?) after the rendering pass and they need to be releaded for the next one.
+  this->target_camera->draw(tick,SHADOWABLE|SHADOWCASTER,0,OR);
+
+  glEnable(GL_BLEND);
+  glBlendFunc(GL_ONE, GL_ONE); // The blending function scr+dst, to add all the lighting
+  glDepthMask(GL_FALSE);  // We stop writing to z-buffer now. We made this in the first pass, now we have it
+  glDepthFunc(GL_LEQUAL); // we put it again to LESS or EQUAL (or else you will get some z-fighting)
+  for(auto & light : lights) {
+    light.first->enable();
+    this->target_camera->update_world(); // Addition of this line prevents the flickering of // TODO: he scene. Apparently some values are lost from the shaders (maybe?) after the rendering pass and they need to be releaded for the next one.
+    this->target_camera->draw(tick,SHADOWABLE|SHADOWCASTER,1,OR);
+    light.first->disable();
+  }
+  //this->target_camera->update_world(); // Addition of this line prevents the flickering of the scene. Apparently some values are lost from the shaders (maybe?) after the rendering pass and they need to be releaded for the next one.
+  //this->target_camera->draw(tick,TRANSPARENT,current_program,AND);
+}

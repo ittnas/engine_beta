@@ -1,0 +1,1011 @@
+ 1040 sudo blkid
+ 1041 cd /media/
+ 1042 ls
+ 1043 blkid
+ 1044 sudo blkid
+ 1045 sudo shut
+ 1046 sudo lshw -C disk
+ 1047 sudo lshw
+ 1048 sudo lshw -C disk
+ 1049 gparted&
+ 1050 sudo apt-get install gparted
+ 1051 gksudo gparted
+ 1052 sudo lshw -C disk
+ 1053 sudo fdisk /dev/sdb
+ 1054 sudo blkid
+ 1055 sudo mkfs -t fat32 /dev/sdb1
+ 1056 ls
+ 1057 sudo blkid
+ 1058 sudo fdisk /dev/sdb
+ 1059 sudo lshw -C disk
+ 1060 sudo blkid
+ 1061 sudo mkfs -t fat32 /dev/sdb1
+ 1062 man mkfs
+ 1063 sudo mkfs -t vfat /dev/sdb1
+ 1064 sudo blkid
+ 1065 cd /media/
+ 1066 ls
+ 1067 mkdir storage
+ 1068 sudo mkdir storage
+ 1069 mount /dev/sdb1 storage/
+ 1070 sudo mount /dev/sdb1 storage/
+ 1071 cd storage/
+ 1072 ls
+ 1073 mkdir dir
+ 1074 ls
+ 1075 cd ..
+ 1076 ls
+ 1077 ls -l
+ 1078 cd storage/
+ 1079 ls
+ 1080 ls -l
+ 1081 cd ..
+ 1082 ls
+ 1083 chmod -R 755 storage/
+ 1084 sudo chmod -R 755 storage/
+ 1085 cd storage/
+ 1086 ls
+ 1087 mkdir new
+ 1088 ls -l
+ 1089 cd ..
+ 1090 ls -l
+ 1091 sudo chown -R $ittnas:$ittnas /media/storage/
+ 1092 ls -l
+ 1093 chmod -R 755 storage/
+ 1094 sudo chmod -R 755 storage/
+ 1095 cd storage/
+ 1096 ls
+ 1097 mkdir jee
+ 1098 cd ..
+ 1099 ls
+ 1100 ls -l
+ 1101 ls
+ 1102 sudo umount storage/
+ 1103 cd storage/
+ 1104 ls
+ 1105 cd ..
+ 1106 ls
+ 1107 ls -l
+ 1108 cd ittnas/
+ 1109 ls
+ 1110 cd 4A9C31319C3118C1/
+ 1111 ls
+ 1112 cd ..
+ 1113 ls
+ 1114 cd ..
+ 1115 ls
+ 1116 cd ittnas/
+ 1117 ls
+ 1118 cd 4F47-C9D2/
+ 1119 ls
+ 1120 mkdir desktop_backup_03022014
+ 1121 cd desktop_backup_03022014/
+ 1122 mkdir home
+ 1123 cd home/
+ 1124 mkdir ittnas
+ 1125 cp -r /home/ittnas/ ./
+ 1126 du -sh
+ 1127 du -sh *
+ 1128 gparted
+ 1129 gksudo gparted
+ 1130 ls
+ 1131 cd ..
+ 1132 exit
+ 1133 cd /media/
+ 1134 ls
+ 1135 sudo umount ittnas/4F47-C9D2
+ 1136 exit
+ 1137 cd /media/
+ 1138 ls
+ 1139 cd storage/
+ 1140 ls
+ 1141 cd ..
+ 1142 cd ittnas/
+ 1143 ls
+ 1144 cd 4F47-C9D2/
+ 1145 ls
+ 1146 cd desktop_backup_03022014/
+ 1147 ls
+ 1148 cd home/
+ 1149 ls
+ 1150 cd ittnas/
+ 1151 ls
+ 1152 cd Pictures/
+ 1153 ls
+ 1154 cd 2013/
+ 1155 ls
+ 1156 cd Talvivaellus\ Nuuksioon\ -\ Munaton\ 2013/
+ 1157 ls
+ 1158 exit
+ 1159 ls
+ 1160 cd /media/
+ 1161 ls
+ 1162 sudo blkid
+ 1163 sudo mount /dev/sdd1
+ 1164 sudo mount /dev/sdd1 427B-9B27/
+ 1165 cd 427B-9B27/
+ 1166 ls
+ 1167 cd isolinux/
+ 1168 ls
+ 1169 cd ..
+ 1170 ls
+ 1171 cat autorun.inf
+ 1172 cd boot/
+ 1173 ls
+ 1174 cd grub/
+ 1175 ls
+ 1176 cat loopback.cfg
+ 1177 cd ..
+ 1178 ls
+ 1179 cd ..
+ 1180 ls
+ 1181 cd ..
+ 1182 ls
+ 1183 sudo umount 427B-9B27/
+ 1184 sudo blkid
+ 1185 sudo dd if=/home/ittnas/Downloads/ubuntu-12.04.3-desktop-i386.iso of=/dev/sdd 
+bs=4k
+ 1186 ls
+ 1187 sudo umount 427B-9B27/
+ 1188 cd 427B-9B27/
+ 1189 sync
+ 1190 sudo eject /dev/sdd
+ 1191 sudo umount ittnas/4F47-C9D2
+ 1192 sudo blkid
+ 1193 ssh apvepsal@vipunen.hut.fi
+ 1194 exit
+ 1195 cd pelit/Dominions\ 4/
+ 1196 sh dom4.sh &
+ 1197 cd /media/
+ 1198 sudo umount ittnas/4F47-C9D2
+ 1199 gksudo gparted&
+ 1200 sudo blkid
+ 1201 ssh apvepsal@vipunen.hut.fi
+ 1202 exit
+ 1203 sudo blkid
+ 1204 cd /media/
+ 1205 ls
+ 1206 sudo mount /dev/sdb1 storage/
+ 1207 cd storage/
+ 1208 ls
+ 1209 mkdir jee
+ 1210 ls
+ 1211 cd jee/
+ 1212 ls
+ 1213 cd ..
+ 1214 rm jee/
+ 1215 rm -rf jee
+ 1216 ls
+ 1217 cd ..
+ 1218 ls
+ 1219 cd ittnas/
+ 1220 ls
+ 1221 cd ..
+ 1222 ls
+ 1223 cd storage/
+ 1224 ls
+ 1225 mkdir backup
+ 1226 cd backup/
+ 1227 ls
+ 1228 sudo tar cvpzf backup04022014.tgz --exclude=/proc --exclude=/lost+found 
+--exclude=/backup.tgz --exclude=/mnt --exclude=/sys --exclude=/media /
+ 1229 ls
+ 1230 du -h backup04022014.tgz
+ 1231 ls
+ 1232 cp -r --no-dereference / ./
+ 1233 sudo cp -r --no-dereference / ./
+ 1234 ls
+ 1235 cp -a /home/ittnas/ ./
+ 1236 cp -a /home/ittnas/. ./
+ 1237 cd home/
+ 1238 cp -a /home/ittnas/. ./
+ 1239 cd ittnas/
+ 1240 cp -a /home/ittnas/. ./
+ 1241 ls
+ 1242 cd Documents/
+ 1243 ls
+ 1244 ls -l
+ 1245 cd ..
+ 1246 cd Pictures/
+ 1247 ls
+ 1248 cd 2014
+ 1249 cd 2013
+ 1250 ls
+ 1251 cd Puolarmetsän\ kyyt/
+ 1252 ls
+ 1253 okular DSCN2899.JPG &
+ 1254 cd ..
+ 1255 ls
+ 1256 cd ..
+ 1257 exit
+ 1258 cd Downloads/
+ 1259 ls
+ 1260 rm ubuntu-1*
+ 1261 ls
+ 1262 cd ~/Downloads/
+ 1263 ls
+ 1264 ls|grep boot
+ 1265 sudo blkid
+ 1266 sudo dd bs=4M if=/home/ittnas/Downloads/boot-repair-disk-64bit.iso of=/dev/sdd
+ 1267 sudo blkid
+ 1268 sudo dd bs=4M if=/home/ittnas/Downloads/boot-repair-disk-64bit.iso of=/dev/sdd
+ 1269 sudo eject /dev/sdd
+ 1270 cd pelit/Dominions\ 4/
+ 1271 sh dom4.sh &
+ 1272 exit
+ 1273 sudo apt-get install
+ 1274 sudo add-apt-repository ppa:gezakovacs/ppa
+ 1275 sudo apt-get update
+ 1276 sudo apt-get install unetbootin
+ 1277 unetbootin
+ 1278 ls
+ 1279 gparted
+ 1280 gksudo gparted
+ 1281 unetbootin&
+ 1282 ls
+ 1283 cd /mnt
+ 1284 ls
+ 1285 cd /media/
+ 1286 ls
+ 1287 sudo mount /dev/sdd1 427B-9B27/
+ 1288 sudo umount 427B-9B27/
+ 1289 sudo blkid
+ 1290 man dd
+ 1291 sudo dd if=/home/ittnas/Downloads/ubuntu-13.10-desktop-i386.iso of=/dev/sdd
+ 1292 sudo blkid
+ 1293 sudo dd if=/home/ittnas/Downloads/ubuntu-13.10-desktop-amd64.iso of=/dev/sdd
+ 1294 sudo eject /dev/sdd
+ 1295 emacs -nw .profile
+ 1296 echo $CVSROOT
+ 1297 ls
+ 1298 emacs .bashrc&
+ 1299 echo $CVSROOT
+ 1300 echo CVSROOT
+ 1301 emacs .bashrc&
+ 1302 dd if=/home/ittnas/Downloads/ubuntu-12.04.3-desktop-i386.iso of=/dev/sdd
+ 1303 suso dd if=/home/ittnas/Downloads/ubuntu-12.04.3-desktop-i386.iso of=/dev/sdd
+ 1304 sudo dd if=/home/ittnas/Downloads/ubuntu-12.04.3-desktop-i386.iso of=/dev/sdd
+ 1305 sudo eject /dev/sdd
+ 1306 exit
+ 1307 sudo shut
+ 1308 cd pelit/Dominions\ 4/
+ 1309 sh dom4.sh &
+ 1310 ssh apvepsal@vipunen.hut.fi
+ 1311 suydo shut'
+ 1312 sudo shut
+ 1313 cd pelit/Dominions\ 4/
+ 1314 sh dom4.sh &
+ 1315 ls
+ 1316 cd /
+ 1317 ls
+ 1318 cd bin/
+ 1319 ls
+ 1320 cd ..
+ 1321 ls
+ 1322 cd /media/
+ 1323 ls
+ 1324 cd storage/
+ 1325 ls
+ 1326 cd ..
+ 1327 sudo blkid
+ 1328 sudo lshw
+ 1329 sudo lspci
+ 1330 sudo lscpu
+ 1331 sudo blkid
+ 1332 sudo mount /dev/sdb1 ./storage/
+ 1333 cd storage/
+ 1334 ls
+ 1335 cd backup/
+ 1336 ls
+ 1337 cd home/
+ 1338 ls
+ 1339 cd ittnas/
+ 1340 ls
+ 1341 ls -l
+ 1342 cat Scanner.java
+ 1343 ls
+ 1344 eval $(echo "no:global default;fi:normal file;di:directory;ln:symbolic 
+link;pi:named pipe;so:socket;do:door;bd:block device;cd:character device;or:orphan 
+symlink;mi:missing file;su:set uid;sg:set gid;tw:sticky other writable;ow:other 
+writable;st:sticky;ex:executable;"|sed -e 's/:/="/g; s/\;/"\n/g')
+ 1345 { IFS=: ; for i in $LS_COLORS ; do echo -e "\e[${i#*=}m$( x=${i%=*}; [ "${!x}" ] 
+&& echo "${!x}" || echo "$x" )\e[m" ; done ; }
+ 1346 man cp
+ 1347 ls
+ 1348 cd pelit/
+ 1349 ls
+ 1350 cd Dominions\ 4/
+ 1351 ls
+ 1352 cd data/
+ 1353 ls
+ 1354 ls -l
+ 1355 cd ..
+ 1356 ls
+ 1357 cd ..
+ 1358 ls
+ 1359 cd ..
+ 1360 ls
+ 1361 mkdir /bin
+ 1362 ls
+ 1363 mkdir bin
+ 1364 ls
+ 1365 cd bin/
+ 1366 ls
+ 1367 cd ..
+ 1368 ls
+ 1369 cd bin/
+ 1370 ls
+ 1371 sudo cp -a /bin/ ./
+ 1372 ls
+ 1373 cd bin/
+ 1374 ls
+ 1375 cd ..
+ 1376 ls
+ 1377 rm -rf bin/
+ 1378 ls
+ 1379 cd ..
+ 1380 ls
+ 1381 rm -rf bin/
+ 1382 sudo cp -a /bin/ ./
+ 1383 ls
+ 1384 cd bin/
+ 1385 ls
+ 1386 cd ..
+ 1387 sudo cp -a /usr/ ./
+ 1388 ls
+ 1389 cd ..
+ 1390 ls
+ 1391 sudo umount
+ 1392 sudo umount /dev/sdb1
+ 1393 ls
+ 1394 cd storage/
+ 1395 ls
+ 1396 cd ..
+ 1397 cd ittnas/
+ 1398 ls
+ 1399 cd ..
+ 1400 ls
+ 1401 cd ..
+ 1402 ls
+ 1403 cd /
+ 1404 ls
+ 1405 cd /proc/
+ 1406 ls
+ 1407 cat /proc/locks
+ 1408 ls
+ 1409 cd 1
+ 1410 ls
+ 1411 cd attr/
+ 1412 ls
+ 1413 cat current
+ 1414 cat exec
+ 1415 cat fscreate
+ 1416 cat current
+ 1417 cat prev
+ 1418 cd ..
+ 1419 ls
+ 1420 cat cgroup
+ 1421 cat cpuset
+ 1422 cat cmdline
+ 1423 cat latency
+ 1424 cat limits
+ 1425 cat mount
+ 1426 cat mounts
+ 1427 cat pagemap
+ 1428 cat stack
+ 1429 ls
+ 1430 ls -l
+ 1431 cd ..
+ 1432 ls
+ 1433 cat cpuinfo
+ 1434 cat schedstat
+ 1435 cd ..
+ 1436 ls
+ 1437 sudo shut
+ 1438 l
+ 1439 cd /media/
+ 1440 ls
+ 1441 cd storage/
+ 1442 ls
+ 1443 sudo blkid
+ 1444 sudo shutdown -p 0
+ 1445 sudo shutdown -P 0
+ 1446 sudo apt-get install okular
+ 1447 ls
+ 1448 cd ohjelmointi/opengl/opengl/engine_
+ 1449 cd ohjelmointi/opengl/opengl/engine_beta/
+ 1450 ./main
+ 1451 ls
+ 1452 cd /usr/
+ 1453 ls
+ 1454 cd bin/
+ 1455 ls
+ 1456 cd ..
+ 1457 cd home/ittnas/
+ 1458 ls
+ 1459 ls
+ 1460 cd ..
+ 1461 cd /
+ 1462 ls
+ 1463 cd /home/ittnas/
+ 1464 ls
+ 1465 cd pelit/
+ 1466 cd Dominions\ 4/
+ 1467 ls
+ 1468 sh dom4.sh &
+ 1469 ls
+ 1470 cd ..
+ 1471 ls
+ 1472 cd ..
+ 1473 ls
+ 1474 cd Do
+ 1475 cd Documents/
+ 1476 ls
+ 1477 cd ..
+ 1478 sudo glxinfo
+ 1479 sudo fxinfo
+ 1480 cd ohjelmat/
+ 1481 ls
+ 1482 cd dwm/
+ 1483 ls
+ 1484 cd Downloads/
+ 1485 ls
+ 1486 cp dwm-6.0 ~/ohjelmat/dwm/
+ 1487 cp dwm-6.0.tar.gz ~/ohjelmat/dwm/
+ 1488 cd ~/ohjelmat/dwm/
+ 1489 ls
+ 1490 tar xvzf dwm-6.0.tar.gz
+ 1491 ls
+ 1492 cd dwm-6.0/
+ 1493 ls
+ 1494 sudo make clean install
+ 1495 sudo apt-get install libxinerama-dev
+ 1496 sudo make clean install
+ 1497 sudo apt-get install dwm
+ 1498 sudo cp /usr/share/xsessions/dwm.desktop /usr/share/xsessions/dwm.desktop.bak
+ 1499 sudo apt-get purge dwm
+ 1500 sudo mv /usr/share/xsessions/dwm.desktop.bak /usr/share/xsessions/dwm.desktop
+ 1501 ls
+ 1502 cd ohjelmat/dwm/
+ 1503 ls
+ 1504 cd dwm-6.0/
+ 1505 ls
+ 1506 cat config.h
+ 1507 emacs -nw config.h&
+ 1508 emacs -nw config.h
+ 1509 sudo apt-get install emacs
+ 1510 emacs -nw config.h
+ 1511 sudo emacs -nw config.h
+ 1512 sudo make clean install
+ 1513 cd pelit/Dominions\ 4/
+ 1514 ls
+ 1515 sh dom4.sh &
+ 1516 sudo apt-get install libsdl1.2-dev
+ 1517 sh dom4.sh &
+ 1518 cd ohjelmat/dwm/dwm-6.0/
+ 1519 ls
+ 1520 sudo emacs -nw config.h
+ 1521 sudo make clean install
+ 1522 ls
+ 1523 sudo apt-get install eclipse
+ 1524 sudo shut
+ 1525 sudo shutdown -P 0
+ 1526 cd pelit/HoN/
+ 1527 l
+ 1528 sh hon.sh
+ 1529 exit
+ 1530 cd pelit/Dominions\ 4/
+ 1531 sh dom4.sh &
+ 1532 cd pelit/HoN/
+ 1533 sh hon.sh &
+ 1534 cd ..
+ 1535 cd Dominions\ 4/
+ 1536 sh dom4.sh &
+ 1537 ssh apvepsal@vipunen.hut.fi
+ 1538 sudo shut
+ 1539 sudo shutdown -P 0
+ 1540 cd pelit/Dominions\ 4/
+ 1541 sh dom4.sh &
+ 1542 ssh apvepsal@vipunen.hut.fi
+ 1543 exit
+ 1544 sudo shut
+ 1545 sudo shutdown -P 0
+ 1546 cd Documents/
+ 1547 ls
+ 1548 cd Rope/
+ 1549 ls
+ 1550 cd Vanhoja/
+ 1551 ls
+ 1552 cd Thaur_Anton_backup_03022014/
+ 1553 ls
+ 1554 cd creator/
+ 1555 ls
+ 1556 java -jar char.jar &
+ 1557 java -jar char.jar&
+ 1558 ls
+ 1559 cd characters/
+ 1560 ls
+ 1561 cd ..
+ 1562 cat .emacs
+ 1563 cat .profile
+ 1564 ls
+ 1565 cat .bashrc
+ 1566 emacs .profile&
+ 1567 cd Documents/Rope/
+ 1568 ls
+ 1569 cd Vanhoja/
+ 1570 ls
+ 1571 cd Thaur_Anton_backup_
+ 1572 cd Thaur_Anton_backup_03022014/
+ 1573 ls
+ 1574 cd creator/
+ 1575 ls
+ 1576 java -jar char.jar &
+ 1577 cd Documents/Rope/
+ 1578 ls
+ 1579 cd Vanhoja/
+ 1580 ls
+ 1581 cd Thaur_Anton_backup_03022014/
+ 1582 ls
+ 1583 cd creator/
+ 1584 ls
+ 1585 java -jar char.jar&
+ 1586 ls
+ 1587 cd characters/
+ 1588 ls
+ 1589 cd Vanhat/
+ 1590 ls
+ 1591 cd ..
+ 1592 ls
+ 1593 cp peks1010.chr Vanhat/peksi030314.chr
+ 1594 cp Thaur20131003.chr Vanhat/Thaur030314.chr
+ 1595 cd ..
+ 1596 java -jar char.jar &
+ 1597 ls
+ 1598 cd ..
+ 1599 cd..
+ 1600 cd ..
+ 1601 find ./ -name "Thaur*"
+ 1602 ls
+ 1603 cd backup/
+ 1604 ls
+ 1605 cd LTL/
+ 1606 ls
+ 1607 cd ..
+ 1608 ls
+ 1609 cd ..
+ 1610 ls
+ 1611 cd Documents/
+ 1612 ls
+ 1613 cd Rope/
+ 1614 ls
+ 1615 cd Vanhoja/
+ 1616 ls
+ 1617 cd Thaur_Anton_backup_03022014/
+ 1618 ls
+ 1619 cd creator/
+ 1620 ls
+ 1621 java -jar char.jar&
+ 1622 cd ..
+ 1623 cd Pictures/
+ 1624 ls
+ 1625 cd 2013/
+ 1626 ls
+ 1627 shotwell&
+ 1628 cd ..
+ 1629 cd pelit/Dominions\ 4/
+ 1630 sh dom4.sh &
+ 1631 ssh apvepsal@vipunen.hut.fi
+ 1632 sudo shutdown -P 0
+ 1633 cd pelit/Dominions\ 4/
+ 1634 sh dom4.sh ^
+ 1635 sh dom4.sh^
+ 1636 sh dom4.sh ^
+ 1637 ssh apvepsal@vipunen.hut.fi
+ 1638 exit
+ 1639 cd pelit/Dominions\ 4/
+ 1640 sh dom4.sh &
+ 1641 sudo shut
+ 1642 sudo shutdown -P 0
+ 1643 cd pelit/Dominions\ 4/
+ 1644 sh dom4.sh &
+ 1645 ssh apvepsal@vipunen.hut.fi
+ 1646 sudo shut
+ 1647 sudo shutdown -P 0
+ 1648 ssh apvepsal@vipunen.hut.fi
+ 1649 cd pelit/Dominions\ 4/
+ 1650 sh dom4.sh &
+ 1651 sudo shutdown -P 0
+ 1652 cd pelit/Dominions\ 4/
+ 1653 sh dom4.sh &
+ 1654 ssh apvepsal@vipunen.hut.fi
+ 1655 sudo shut
+ 1656 sudo shutdown -P 0
+ 1657 cd pelit/Dominions\ 4/
+ 1658 sh dom4.sh
+ 1659 ssh apvepsal@vipunen.hut.fi
+ 1660 sudo shut
+ 1661 sudo shutdown -P 0
+ 1662 cd pelit/Dominions\ 4/
+ 1663 sh dom4.sh &
+ 1664 cd pelit/Dominions\ 4/
+ 1665 sh dom4.sh &
+ 1666 ls
+ 1667 ssh apvepsal@vipunen.hut.fi
+ 1668 emacs .profile&
+ 1669 sudo shut
+ 1670 sudo shutdown -P 0
+ 1671 find -name "Thaur*"
+ 1672 cd Rope
+ 1673 cd Documents/
+ 1674 ls
+ 1675 cd Rope/
+ 1676 ls
+ 1677 cd Vanhoja/
+ 1678 ls
+ 1679 cd creator/
+ 1680 ls
+ 1681 cd characters/
+ 1682 ls
+ 1683 cd ..
+ 1684 cd Thaur_Anton_backup_03022014/
+ 1685 ls
+ 1686 cd creator/
+ 1687 ls
+ 1688 java -jar char.jar &
+ 1689 cd Documents/Rope/
+ 1690 ls
+ 1691 cd Vanhoja/
+ 1692 ls
+ 1693 cd Thaur_Anton_backup_03022014/
+ 1694 ls
+ 1695 cd creator/
+ 1696 java -jar char.jar &
+ 1697 cd characters/
+ 1698 ls
+ 1699 emacs Thaur20131003.chr &
+ 1700 java -jar char.jar&
+ 1701 cd ..
+ 1702 java -jar char.jar&
+ 1703 ls
+ 1704 cd characters/
+ 1705 emacs Thaur20131003.chr&
+ 1706 cd ..
+ 1707 java -jar char.jar &
+ 1708 cd characters/
+ 1709 ls
+ 1710 cp Thaur20131003.chr_backup Thaur20131003.chr
+ 1711 cd pelit/Dominions\ 4/
+ 1712 sh dom4.sh &
+ 1713 ls
+ 1714 emacs -nw .profile
+ 1715 cd pelit/Dominions\ 4/
+ 1716 sh dom4.sh &
+ 1717 sudo shut
+ 1718 sudo shutdown -P 0
+ 1719 cd pelit/Dominions\ 4/
+ 1720 sh dom4.sh &
+ 1721 ssh apvepsal@vipunen.hut.fi
+ 1722 sudo shut
+ 1723 sudo shutdown -P 0
+ 1724 ssh apvepsal@vipunen.hut.fi
+ 1725 cd pelit/Dominions\ 4/
+ 1726 sh dom4.sh &
+ 1727 sudo shutdown -P 0
+ 1728 cd pelit/Dominions\ 4/
+ 1729 sh dom4.sh &
+ 1730 '
+ 1731 '
+ 1732 sh dom4.sh &
+ 1733 cd Documents/Rope/
+ 1734 ls
+ 1735 cd thfe2/
+ 1736 ls
+ 1737 cd ..
+ 1738 cd Vanhoja/
+ 1739 ls
+ 1740 cd Thaur_Anton_backup_03022014/
+ 1741 ls
+ 1742 cd creator/
+ 1743 ls
+ 1744 java -jar char.jar &
+ 1745 ls
+ 1746 java -jar char.jar &
+ 1747 ls
+ 1748 cd characters/
+ 1749 ls
+ 1750 mv peks1010_viallinen.chr peks1010.chr
+ 1751 ls
+ 1752 cd Vanhat/
+ 1753 ls
+ 1754 cd ..
+ 1755 java -jar char.jar&
+ 1756 cd ..
+ 1757 java -jar char.jar&
+ 1758 ssh apvepsal@vipunen.hut.fi
+ 1759 sudo shut
+ 1760 sudo shutdown -P 0
+ 1761 cd pelit/Dominions\ 4/
+ 1762 sh dom4.sh &
+ 1763 ssh apvepsal@vipunen.hut.fi
+ 1764 exit6
+ 1765 exit
+ 1766 sudo shutdown -P 0
+ 1767 ssh apvepsal@brute.aalto.fi
+ 1768 exit
+ 1769 man info
+ 1770 info emacs
+ 1771 man emacs
+ 1772 info make
+ 1773 man make
+ 1774 info gcc
+ 1775 cd pelit/Dominions\ 4/
+ 1776 sh dom4.sh &
+ 1777 cd Downloads/
+ 1778 ls
+ 1779 ls |grep steam
+ 1780 dpkg -i steam_latest.deb
+ 1781 sudo dpkg -i steam_latest.deb
+ 1782 sudo apt-get install curl
+ 1783 sudo dpkg -i steam_latest.deb
+ 1784 ls
+ 1785 ls |grep steam
+ 1786 ssh apvepsal@vipunen.hut.fi
+ 1787 exit
+ 1788 cd pelit/Dominions\ 4/
+ 1789 sh dom4.sh &
+ 1790 steam
+ 1791 gksudo software-center
+ 1792 sudo apt-get install gksu
+ 1793 gksudo software-center
+ 1794 sudo shutdown -P 0
+ 1795 cd pelit/Dominions\ 4/
+ 1796 sh dom4.sh &
+ 1797 cd pelit/Dominions\ 4/
+ 1798 sh dom4.sh &
+ 1799 calt
+ 1800 calc
+ 1801 0.2/13
+ 1802 calc
+ 1803 sudo apt-get install apcalc
+ 1804 calc
+ 1805 exit
+ 1806 ssh apvepsal@vipunen.hut.fi
+ 1807 exit
+ 1808 sudo shutdown -P 0
+ 1809 ssh apvepsal@vipunen.hut.fi
+ 1810 exit
+ 1811 ls
+ 1812 cd ohjelmat/
+ 1813 ls
+ 1814 cd Accounting
+ 1815 ls
+ 1816 java -jar Accounting.jar &
+ 1817 ls
+ 1818 cp Tilit06072012.acc vanhat/Tilit01112013.acc
+ 1819 cp Tilit06072012.grp vanhat/Tilit01112013.grp
+ 1820 ls
+ 1821 cd vanhat/
+ 1822 ls
+ 1823 cd ..
+ 1824 ls
+ 1825 mv Tilit06072012.acc Tilit03032014.acc
+ 1826 mv Tilit06072012.grp Tilit03032014.grp
+ 1827 calc
+ 1828 cd pelit/Dominions\ 4/
+ 1829 sh dom4.sh &
+ 1830 sudo shut
+ 1831 sudo shutdown -P 0
+ 1832 calc
+ 1833 cd pelit/Dominions\ 4/
+ 1834 sh dom4.sh
+ 1835 ssh apvepsal@vipunen.hut.fi
+ 1836 sudo shut
+ 1837 sudo shutdown -P 0
+ 1838 cd pelit/Dominions\ 4/
+ 1839 sh dom4.sh &
+ 1840 sudo shutdown -P 0
+ 1841 sudo blkid
+ 1842 cd /media/
+ 1843 ls
+ 1844 cd storage/
+ 1845 ls
+ 1846 cd ..
+ 1847 sudo mount /dev/sdc1 storage/
+ 1848 cd storage/
+ 1849 ls
+ 1850 cd backup/
+ 1851 ls
+ 1852 cd home/
+ 1853 ls
+ 1854 cd ittnas/
+ 1855 ls
+ 1856 cd ..
+ 1857 ls
+ 1858 ls -lh
+ 1859 wc -h backup/
+ 1860 wc backup/
+ 1861 wc -r backup/
+ 1862 du -sh *
+ 1863 ls
+ 1864 cd backup/
+ 1865 sl
+ 1866 ls
+ 1867 cd home/
+ 1868 ls
+ 1869 cd ittnas/
+ 1870 ls
+ 1871 cd ..
+ 1872 ls
+ 1873 du -sh
+ 1874 ls
+ 1875 cd ..
+ 1876 sudo umount storage/
+ 1877 cd storage/
+ 1878 ls
+ 1879 cd backup/
+ 1880 ls
+ 1881 cd home/ittnas/
+ 1882 ls
+ 1883 cd Videos/
+ 1884 ls
+ 1885 cd ..
+ 1886 ls
+ 1887 cd ..
+ 1888 ls
+ 1889 cd ..
+ 1890 ls
+ 1891 sudo umount storage/
+ 1892 ls
+ 1893 cd storage/
+ 1894 ls
+ 1895 cd ..
+ 1896 cd ~
+ 1897 cd Videos/
+ 1898 ls
+ 1899 du -sh
+ 1900 ls
+ 1901 rm -rf ./*
+ 1902 ls
+ 1903 cd ..
+ 1904 ls
+ 1905 sudo shutdown -r 0
+ 1906 eject
+ 1907 sudo eject
+ 1908 sudo shutdown -P +
+ 1909 sudo shutdown -P 0
+ 1910 sudo eject
+ 1911 sudo shutdown -r +
+ 1912 sudo shutdown -r 0
+ 1913 ssh apvepsal@vipunen.hut.fi
+ 1914 sudo shutdown -r 0
+ 1915 ssh apvepsal@vipunen.hut.fi
+ 1916 sudo shut
+ 1917 sudo shutdown -P 0
+ 1918 ssh apvepsal@vipunen.hut.fi
+ 1919 ls
+ 1920 cd ohjelmointi/
+ 1921 ls
+ 1922 cd opengl/
+ 1923 ls
+ 1924 cd opengl/
+ 1925 ls
+ 1926 cd engine_beta/
+ 1927 ls
+ 1928 ./main
+ 1929 sudo apt-get install libGLew
+ 1930 apt-cache search glew
+ 1931 sudo apt-get install libglew-dev
+ 1932 ./main
+ 1933 sudo apt-get install libglew1.8
+ 1934 sudo apt-get install glew-utils
+ 1935 ./main
+ 1936 make Makefile
+ 1937 ls
+ 1938 make
+ 1939 g++
+ 1940 man g++
+ 1941 sudo apt-get install gcc
+ 1942 g++
+ 1943 sudo apt-get install g++
+ 1944 make
+ 1945 apt-cache search glm
+ 1946 sudo apt-get install libglm-dev
+ 1947 make
+ 1948 sudo apt-get install libfreetype6-dev
+ 1949 make
+ 1950 emacs main.cpp&
+ 1951 ./main
+ 1952 valgrind ./main
+ 1953 sudo apt-get install valgrind
+ 1954 valgrind ./main
+ 1955 ssh apvepsal@vipunen.hut.fi
+ 1956 exit
+ 1957 fglrxinfo
+ 1958 glxinfo
+ 1959 sudo apt-get install mesa-utils
+ 1960 glxinfo
+ 1961 glxinfo|grep rendere
+ 1962 glxinfo|grep gl
+ 1963 ps -e
+ 1964 kill 13376
+ 1965 ps -e|grep main
+ 1966 kill -9 13376
+ 1967 ps -e
+ 1968 ps -e|grep main
+ 1969 kill 13927
+ 1970 ps -e|grep main
+ 1971 kill -9 13927
+ 1972 killall main
+ 1973 killall -9 main
+ 1974 killall -9 valgrind
+ 1975 ps -e
+ 1976 ps -e|grep valgrind
+ 1977 lspci -nn |grep VGA
+ 1978 dmesg|egrep 'drm|radeon'
+ 1979 glxinfo |grep "OpenGL Version"
+ 1980 glxinfo |grep opengl
+ 1981 glxinfo | grep "OpenGL version"
+ 1982 software-properties-gtk --open-tab=4
+ 1983 gksudo software-properties-gtk --open-tab=4
+ 1984 sudo software-properties-gtk --open-tab=4
+ 1985 glxinfo | grep "OpenGL version"
+ 1986 fglxinfo | grep "OpenGL version"
+ 1987 sudo shutdown -r 0
+ 1988 gksudo amdcccle
+ 1989 fglxinfo | grep "OpenGL version"
+ 1990 glxinfo | grep "OpenGL version"
+ 1991 xrandr
+ 1992 glxinfo | grep "OpenGL version"
+ 1993 cd ohjelmointi/opengl/opengl/engine_beta/
+ 1994 ls
+ 1995 ./main
+ 1996 cd ohjelmointi/opengl/opengl/engine_beta/
+ 1997 ls
+ 1998 valgrind ./main
+ 1999 ./main
+ 2000 cd ohjelmointi/opengl/opengl/engine_beta/
+ 2001 ls
+ 2002 valgrind ./main
+ 2003 emacs valgrind_ignore.txt
+ 2004 valgrind ./main --suppressions=valgrind_ignore.txt
+ 2005 emacs main.cpp&
+ 2006 ls
+ 2007 cvs add valgrind_ignore.txt
+ 2008 sudo apt-get install cvs
+ 2009 cvs add valgrind_ignore.txt
+ 2010 ls
+ 2011 cvs commit -m "The point right after reinstalling Ubuntu (version 13.10). The 
+program crashes in the main, but works with Valgrind. Starting fixing the problems."
+ 2012 cat compile
+ 2013 ls
+ 2014 cvs add texture_object.hpp texture_buffer.hpp texture_object.cpp 
+texture_buffer.cpp
+ 2015 cvs commit -m "The point right after reinstalling Ubuntu (version 13.10). The 
+program crashes in the main, but works with Valgrind. Starting fixing the problems."
+ 2016 cvs add texture1D.hpp texture1D.cpp text_object.hpp text_object.cpp
+ 2017 cvs commit -m "The point right after reinstalling Ubuntu (version 13.10). The 
+program crashes in the main, but works with Valgrind. Starting fixing the problems."
+ 2018 ls
+ 2019 emacs main.cpp
+ 2020 emacs main.cpp&
+ 2021 valgrind --Wall ./main
+ 2022 valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 
+--track-fds=yes ./main
+ 2023 valgrind -suppressions=valgrind_ignore.txt ./main
+ 2024 valgrind --suppressions=valgrind_ignore.txt ./main
+ 2025 valgrind add --gen-suppressions=all
+ 2026 valgrind --gen-suppressions=all
+ 2027* valgrind --gen-suppressions=all ./main
+ 2028 valgrind --suppressions=valgrind_ignore.txt --gen-suppressions=all ./main
+ 2029 valgrind --suppressions=valgrind_ignore.txt ./main
+ 2030 valgrind -v --suppressions=valgrind_ignore.txt ./main
+ 2031 ./main
+ 2032 valgrind --suppressions=valgrind_ignore.txt ./main
+ 2033 ./main
+ 2034 valgrind --suppressions=valgrind_ignore.txt ./main
+ 2035 ./main
+ 2036 valgrind --suppressions=valgrind_ignore.txt ./main
+ 2037 ./main
+ 2038 valgrind --suppressions=valgrind_ignore.txt ./main
+ 2039 history|nano

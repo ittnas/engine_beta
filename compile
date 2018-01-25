@@ -1,0 +1,11 @@
+-*- mode: compilation; default-directory: "/home/ittnas/ohjelmointi/opengl/opengl/engine_beta/" -*-
+Compilation started at Sun Jan 26 17:00:44
+
+make -k 
+g++ -g -std=c++0x -I/usr/include/freetype2 -c -o opengl_data_type_enum_length.o opengl_data_type_enum_length.cpp
+opengl_data_type_enum_length.cpp: In static member function ‘static GLsizei DataType::sizeof_enum(GLenum)’:
+opengl_data_type_enum_length.cpp:6:33: error: invalid types ‘<unresolved overloaded function type>[GLenum {aka unsigned int}]’ for array subscript
+make: *** [opengl_data_type_enum_length.o] Error 1
+make: Target `main' not remade because of errors.
+
+Compilation exited abnormally with code 2 at Sun Jan 26 17:00:44

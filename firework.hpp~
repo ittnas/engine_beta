@@ -1,0 +1,12 @@
+#ifndef FIREWORK_HPP
+#define FIREWORK_HPP
+
+class Firework : virtual public Object {
+private:
+  FireworkBuffer * fwb;
+public:
+  Firework();
+  virtual ~Firework() {}
+}
+
+#endif

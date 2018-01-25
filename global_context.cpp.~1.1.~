@@ -1,0 +1,4 @@
+#include "global_context.hpp"
+
+static MatrixStack * GlobalContext::model_stack = new MatrixStack;
+static MatrixStack * GlobalContext::projection_stack = new MatrixStack;

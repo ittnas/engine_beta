@@ -1,0 +1,27 @@
+#ifndef BOUNDING_GEOMETRY_FACTORY_HPP
+#define BOUNDING_GEOMETRY_FACTORY_HPP
+
+#include "bounding_geometry.hpp"
+
+typedef BoundingSphere * (*BoundingSphereFromBoxAlgorithm)(BoundingBox *); // Typedef should be in algorithms.h
+typedef BoundingSphere * (*BoundingSphereFromSphereAlgorithm)(BoundingSphere *);
+
+class BoundingGeometryFactory {
+private:
+  BoundingSphereFromBoxAlgorithm bsfba;
+  BoundingSphereFromSphereAlgorithm bsfsa;
+public:
+  BoundingGeometryFactory();
+  virtual ~BoundingGeometryFactory() {}
+  //BoundingGeometry * generate_bounding_geometry(BoundingGeometryType bvt, Object * object);
+protected:
+  //virtual BoundingSphere * 
+public:
+  BoundingSphere * create_bounding_sphere_from(const BoundingBox * box); // Maybe even from box, which bounding box then implements.
+  BoundingBox * create_bounding_box_from(const BoundingBox * box);
+public:
+  void set_algorithm_bounding_sphere_from_bounding_box(BoundingSphereFromBoxAlgorithm bsfba);
+    void set_algorithm_bounding_sphere_from_bounding_sphere(BoundingSphereFromSphereAlgorithm bsfba);
+};
+
+#endif

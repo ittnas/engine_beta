@@ -1,0 +1,12 @@
+CC = g++
+CFLAGS = -g -std=c++0x -I/usr/include/freetype2
+LIBS = -lSDL -lGL -lGLU -lGLEW -lpng -lfreetype
+DEPS = buffer.hpp ubo.hpp model_buffer.hpp drawer.hpp action.hpp object.hpp program.hpp shape.hpp mesh.hpp render_flag.hpp attribute_array.hpp edge.hpp index_array.hpp matrix_stack.hpp world.hpp projection_buffer.hpp movable.hpp camera.hpp view_buffer.hpp tetrahedron.hpp viewer.hpp drawer.hpp key_table.hpp flying_camera.hpp key_action.hpp light_manager.hpp lightning_buffer.hpp light.hpp manager.hpp uniform_material.hpp uniform_material_buffer.hpp buffer_list.hpp parametric_plot.hpp parametric_functions.hpp global_context.hpp update_time_action.hpp firework_shape.hpp firework_shooter.hpp firework_buffer.hpp firework.hpp firework_action.hpp killer_action.hpp text_object.hpp opengl_data_type_enum_length.hpp #texture.hpp texture1D.hpp texture_buffer.hpp
+
+OBJ = buffer.o ubo.o debug_main.o model_buffer.o drawer.o action.o object.o program.o shape.o mesh.o attribute_array.o index_array.o matrix_stack.o world.o projection_buffer.o movable.o camera.o view_buffer.o tetrahedron.o viewer.o drawer.o key_table.o flying_camera.o key_action.o light_manager.o lightning_buffer.cpp light.o uniform_material.cpp uniform_material_buffer.o buffer_list.o parametric_plot.o global_context.o update_time_action.o firework_shape.o firework_shooter.o firework_buffer.o firework.o firework_action.o killer_action.o text_object.o opengl_data_type_enum_length.o #texture.o texture1D.o texture_buffer.o
+
+%.o: %.cpp $(DEPS)
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+main: $(OBJ)
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)

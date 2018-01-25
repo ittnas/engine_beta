@@ -1,0 +1,8 @@
+#ifndef MOVING_OBJECT_TEST
+#define MOVING_OBJECT_TEST
+
+class MovingObjectTest : public Movable () {
+  
+}
+
+#enfif

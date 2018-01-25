@@ -1,0 +1,12 @@
+#ifndef TEXTURE_OBJECT_HPP
+#define TEXTURE_OBJECT_HPP
+
+#include "object.hpp"
+
+class TextureObject : virtual public Object {
+public:
+  TextureObject();
+  ~TextureObject() {}
+  
+};
+#endif
