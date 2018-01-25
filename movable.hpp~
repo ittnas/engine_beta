@@ -1,9 +1,0 @@
-#ifndef MOVABLE_HPP
-#define MOVABLE_HPP
-
-class Movable : virtual public Object {
-  Movable();
-  virtual ~Movable();
-};
-
-#endif

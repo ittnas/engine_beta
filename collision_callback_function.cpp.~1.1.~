@@ -1,6 +1,0 @@
-#include "collision_callback_function.hpp"
-#include "uniform_color_collision_object.hpp"
-
-void MaterialColorCollisionCallbackFunction::apply(const CollisionPair & cp) {
-  ucco->set_ambient_color(ucco->get_ambient_color() + glm::vec4(0.01,0.0,0.0,0.0));
-}

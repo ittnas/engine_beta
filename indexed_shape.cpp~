@@ -1,5 +1,0 @@
-#include "indexed_shape.hpp"
-
-IndexedShape::IndexedShape(std::vector<GLfloat> & vertex_data, std::vector<GLuint> & index_data) : vertex_data(vertex_data), index_data(index_data) {
-  set_mesh();
-}

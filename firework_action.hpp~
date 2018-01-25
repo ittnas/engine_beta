@@ -1,8 +1,0 @@
-#ifndef FIREWORK_ACTION_HPP
-#define FIREWORK_ACTION_HPP
-
-class FireworkAction : public Action {
-  
-};
-
-#endif

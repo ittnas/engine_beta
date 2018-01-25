@@ -1,9 +1,0 @@
-#ifndef CUBE_HPP
-#define CUBE_HPP
-
-class Cube : public Shape {
-private:
-  GLfloat size;
-}
-
-#endif

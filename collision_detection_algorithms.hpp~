@@ -1,8 +1,0 @@
-#ifndef COLLISION_DETECTION_ALGORITHMS_HPP
-#define COLLISION_DETECTION_ALGORITHMS_HPP
-
-namespace CollisionDetectionAlgorithms {
-
-}
-
-#endif

@@ -1,8 +1,0 @@
-#ifndef COLLISION_TREE_HPP
-#define COLLISION_TREE_HPP
-
-class CollisionTree {
-  
-};
-
-#endif

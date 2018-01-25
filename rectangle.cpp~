@@ -1,5 +1,0 @@
-#include "rectangle.hpp"
-
-Rectangle::Rectangle() : Shape() {
-  set_mesh();
-}

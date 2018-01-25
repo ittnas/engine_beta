@@ -1,3 +1,0 @@
-#include "ubo.hpp"
-
-UBO::UBO(std::string ubo_name, GLuint binding_point, GLuint ubo_pointer);

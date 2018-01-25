@@ -1,8 +1,0 @@
-#ifndef SPHERE_HPP
-#define SPHERE_HPP
-
-class Sphere {
-
-};
-
-#endif

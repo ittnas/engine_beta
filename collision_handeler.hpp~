@@ -1,8 +1,0 @@
-#ifndef COLLISION_HANDLER_HPP
-#define COLLISION_HANDLER_HPP
-
-class CollisionHandeler {
-
-};
-
-#endif

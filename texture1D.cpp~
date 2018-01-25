@@ -1,5 +1,0 @@
-#include "texture1D.cpp"
-
-Texture1D::Texture1D(GLubyte * data,GLint internal_format,GLenum format,GLenum type,GLsizei width,GLenum target) : Texture(data,internal_format,format,type,target) {
-  
-}

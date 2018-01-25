@@ -1,7 +1,0 @@
-The components of program, starting from the user-level
-
-1. MAIN PROGRAM
-This runs the graphics engine. For example, this can be a game. Uses SCENEs utility methods to create content to the world.
-
-2. SCENE
-Contains the main part of the engine code. For different purposes, different SCENEs can be used. 

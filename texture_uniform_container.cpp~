@@ -1,5 +1,0 @@
-#include "texture_uniform_container.hpp"
-
-TextureUniformContainer::TextureUniformContainer() : UniformContainer() {
-
-}

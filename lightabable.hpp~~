@@ -1,8 +1,0 @@
-#ifndef LIGHTABLE_HPP
-#define LIGHTABLE_HPP
-
-class Lightable : virtual public Object {
-
-};
-
-#endif

@@ -1,8 +1,0 @@
-#ifndef RENDER_FLAG_HPP
-#define RENDER_FLAG_HPP
-
-enum RenderFlag {
-  SHADOWABLE,SHADOWCASTER,LIGHTABLE
-};
-
-#endif

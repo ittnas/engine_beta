@@ -1,7 +1,0 @@
-#ifndef TEXTURE_UNIFORM_CONTAINER_HPP
-#define TEXTURE_UNIFORM_CONTAINER_HPP
-
-class TextureUniformContainer : public UniformContainer {
-  
-}
-#endif
