@@ -78,7 +78,7 @@ const GLfloat PI =  3.1415925;
 KeyTable * kt;
 SDL_Event event;
 const GLfloat aspect_ratio = (GLfloat)SCREEN_W / SCREEN_H;
-const GLfloat max_fps = 60;
+const GLfloat max_fps = 1000;
 //const GLuint frame_length = 1000/max_fps;
 const GLfloat simulation_speed = 0.5;
 const GLfloat simulation_time_step = 0.0001; // Time in seconds
@@ -1441,9 +1441,9 @@ int main() {
   world->set_projection(ProjectionBuffer::create_perspective_projection_matrix(-1*aspect_ratio,1*aspect_ratio,-1,1,1.0,2000,5000));
   std::cout << "aspect ratio: " << aspect_ratio << "From main.cpp/main." << std::endl;
 
-  //Camera * mv = populate_world_ring(world);
-  //Camera * mv = populate_world_two_objects(world);
-  //Camera * mv = populate_obb_test(world);
+  // Camera * mv = populate_world_ring(world);
+  // Camera * mv = populate_world_two_objects(world);
+  Camera * mv = populate_obb_test(world);
   //Camera * mv = populate_world_wall_of_brigs(world);
   //Camera * mv = populate_world_bouncing_object(world);
   //Camera * mv = populate_world_junk(world);
@@ -1452,16 +1452,17 @@ int main() {
   //Camera * mv = populate_world_farthest_point_to_triangle(world);
   //Camera * mv = populate_world_convex_hull(world);
   //Camera * mv = populate_world_nvidia_test(world);
-  Camera * mv = populate_world_shadows(world);
+  //Camera * mv = populate_world_shadows(world);
   //Camera * mv = populate_world_geom_test(world);
-  
+
   glClearColor(0.0,0.0,0.0,0.0);
   glViewport(0,0,SCREEN_W,SCREEN_H); // TODO! Should this really be here in the loop?
-
+  
   SDL_GL_MakeCurrent(window, NULL); // Free context so that it can be claimed by some other thread.
   std::thread simulation_thread(simulation_loop);
   std::thread drawing_thread(drawing_loop,mv);
   simulation_thread.join();
   drawing_thread.join();
+  
   return 0;
 }

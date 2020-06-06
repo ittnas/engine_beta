@@ -12,8 +12,8 @@ void KeyAction::perform_action(Object * target, GLint time) {
   } else {
     FlyingCamera * cam = dynamic_cast<FlyingCamera *>(target);
     GLdouble passed_time = static_cast<GLdouble>(time - previous_tick) / 1000;
-    //std::cout << passed_time << std::endl;
-
+    // std::cout << passed_time << std::endl;
+    
     if(key_table->get_status(SDLK_w)) {
       GLfloat distance = speed*passed_time;
       cam->move_forward(distance);
@@ -25,6 +25,7 @@ void KeyAction::perform_action(Object * target, GLint time) {
     if(key_table->get_status(SDLK_a)) {
       GLfloat roll_angle = roll_speed*passed_time;
       cam->roll(roll_angle);
+      //std::cout << roll_angle << std::endl;
     }
     if(key_table->get_status(SDLK_d)) {
       GLfloat roll_angle = roll_speed*passed_time;

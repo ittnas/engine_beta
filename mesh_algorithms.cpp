@@ -1,4 +1,5 @@
 #define GLM_FORCE_RADIANS
+#define GLM_ENABLE_EXPERIMENTAL
 
 #include <iostream>
 #include <glm/gtx/norm.hpp>

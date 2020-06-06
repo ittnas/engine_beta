@@ -1,4 +1,5 @@
 #define GLM_FORCE_RADIANS
+#define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtx/norm.hpp>
 #include "collision_detection_algorithms.hpp"
 

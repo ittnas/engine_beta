@@ -5,6 +5,8 @@
 #include "movable.hpp"
 #include "view_buffer.hpp"
 #include "rendering_function.hpp"
+#define GLM_ENABLE_EXPERIMENTAL
+#include <glm/gtx/string_cast.hpp>
 
 class Camera : virtual public Object, virtual public Movable {
 private:

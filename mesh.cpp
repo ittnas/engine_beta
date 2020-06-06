@@ -6,6 +6,7 @@
 #include <assert.h>
 #include <exception>
 #define GLM_FORCE_RADIANS
+#define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtx/norm.hpp>
 #include <vector>
