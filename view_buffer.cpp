@@ -3,7 +3,7 @@
 #define GLM_FORCE_RADIANS
 #include <glm/gtc/type_ptr.hpp>
 
-ViewBuffer::ViewBuffer() : Buffer("view_buffer",buffer_length), forward_dir(glm::vec3(0,0,-1)),up_dir(glm::vec3(0,1,0)) {
+ViewBuffer::ViewBuffer() : Buffer("view_buffer",buffer_length), forward_dir(glm::vec3(0,0,-1)),up_dir(glm::vec3(0,1,0)), forward(glm::fquat(1,0,0,0)), up(glm::fquat(1,0,0,0)) {
   
 }
 
