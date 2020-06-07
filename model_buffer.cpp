@@ -7,7 +7,7 @@
 //MatrixStack * ModelBuffer::model_stack = new MatrixStack();
 //MatrixStack * ModelBuffer::model_stack = GlobalContext::model_stack;
 
-ModelBuffer::ModelBuffer() : Buffer("model_buffer",buffer_length), position(glm::vec4(0,0,0,1)),orientation(glm::fquat(1,0,0,0)), scale(glm::vec3(1,1,1)), center_of_mass(glm::vec3(0,0,0)) {
+ModelBuffer::ModelBuffer() : Buffer("model_buffer",buffer_length), model_matrix(glm::mat4(1)), position(glm::vec4(0,0,0,1)),orientation(glm::fquat(1,0,0,0)), scale(glm::vec3(1,1,1)), center_of_mass(glm::vec3(0,0,0)) {
   model_stack = GlobalContext::model_stack;
 }
 

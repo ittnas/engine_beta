@@ -1,3 +1,6 @@
+#define GLM_ENABLE_EXPERIMENTAL
+#include <glm/gtx/string_cast.hpp>
+
 #include "movable.hpp"
 
 Movable::Movable() : Object() {
@@ -41,6 +44,7 @@ void Movable::get_transformed_mesh_points(std::vector<glm::vec4> & output,GLuint
     //output.insert(output.end(), childs_points.begin(), childs_points.end());
   }
   // TODO might be good idea not to include this. The position of the rigid body might change, which should not affect the position of the mesh of the bounding geometry. Note, this version appears to be working well.
+  //std::cout<<glm::to_string(get_model_matrix())<<std::endl;
   for(GLuint i = 0; i < output.size();i++) {
     output[i] = get_model_matrix()*output[i];
   }

@@ -12,6 +12,11 @@ void CollisionHierarchyNode::generate_bounding_geometry(const std::vector<Boundi
     BoundingGeometryType preferred_bounding_geometry = collision_object->get_preferred_bounding_volume();
     std::vector<glm::vec4> mesh;
     collision_object->get_transformed_mesh_points(mesh,0);
+    //std::cout<<"Mesh size:"<<mesh.size()<<std::endl;
+    //for (auto &i: mesh) {
+    //  std::cout << glm::to_string(i) << std::endl;
+    //}
+
     if(local_bounding_geometry != NULL) {
       delete local_bounding_geometry;
     }

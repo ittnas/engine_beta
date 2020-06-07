@@ -604,6 +604,7 @@ void Mesh::get_points(std::vector<glm::vec4> & output,GLuint attribute_array_ind
     if(nbr_elements == 3) {
       output.push_back(glm::vec4(data[i*nbr_elements + 0],data[i*nbr_elements + 1],data[i*nbr_elements + 2],1.0));
     } else {
+      //std::cout<<"Indices:"<<i<<std::endl;
       output.push_back(glm::vec4(data[i*nbr_elements + 0],data[i*nbr_elements + 1],data[i*nbr_elements + 2],data[i*nbr_elements + 3]));
     }
   }
