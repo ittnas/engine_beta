@@ -70,13 +70,14 @@ void main() {
     gl_PositionIn[4]
 			    );
 
-  for(int ii=0;ii<nbr_active_lights;ii++) {
+  //for(int ii=0;ii<nbr_active_lights;ii++) {
+  for(int ii=0;ii<MAX_NBR_LIGHTS;ii++) {
     if(lights[ii].is_active) {
       l_pos = lights[ii].position;
       break;
     }
   }
-  //l_pos = lights[0].position;
+  //l_pos = lights[1].position;
   // Compute normal at each vertex.
   ns[0] = cross(
 		gl_PositionIn[2].xyz - gl_PositionIn[0].xyz,

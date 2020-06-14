@@ -78,12 +78,12 @@ const GLfloat PI =  3.1415925;
 KeyTable * kt;
 SDL_Event event;
 const GLfloat aspect_ratio = (GLfloat)SCREEN_W / SCREEN_H;
-const GLfloat max_fps = 1000;
+const GLfloat max_fps = 10000;
 //const GLuint frame_length = 1000/max_fps;
-const GLfloat simulation_speed = 0.5;
+const GLfloat simulation_speed = 1.0;
 const GLfloat simulation_time_step = 0.0001; // Time in seconds
-//const GLuint simulation_rounds = 1;
-const GLuint simulation_rounds = std::max(1.0f/(max_fps*simulation_time_step/simulation_speed),1.0f);
+const GLuint simulation_rounds = 1;
+//const GLuint simulation_rounds = std::max(1.0f/(max_fps*simulation_time_step/simulation_speed),1.0f);
 const GLfloat frame_length = std::max(simulation_time_step*simulation_rounds/simulation_speed,static_cast<GLfloat>(1.0/max_fps));
 GLfloat simulation_time = 0.0;
 GLboolean exit_program = GL_FALSE;
@@ -149,13 +149,14 @@ void init_GL() {
   SDL_GL_SetAttribute(SDL_GL_ACCUM_BLUE_SIZE,  16);
   SDL_GL_SetAttribute(SDL_GL_ACCUM_ALPHA_SIZE, 16);
 
-  SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 4);
+  SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
   
   // THIS IS NOW DEPRACATED
   //SDL_Surface * screen = SDL_SetVideoMode(SCREEN_W, SCREEN_H,BITS_PER_PIXEL, SDL_OPENGL); //SDL_Surface creates the opengl context, and therefore needs to be called before glewInit(); 
   
   window = SDL_CreateWindow("Demo",0,0,SCREEN_W,SCREEN_H,SDL_WINDOW_OPENGL| SDL_WINDOW_RESIZABLE);
   glcontext = SDL_GL_CreateContext(window);
+  //SDL_GL_SetSwapInterval(1); // Sync with framerate
 
   // And then glew
   
@@ -997,8 +998,8 @@ Camera * populate_world_wall_of_brigs(World * world) {
   //ParametricSphere * brig = new ParametricSphere(glm::vec3(0,0,0),brig_width/1.41,21);
   ParametricSphere * ball = new ParametricSphere(glm::vec3(0,0,0),1,51);
 
-  GLuint nbrigsy = 1;
-  GLuint nbrigsx = 1;
+  GLuint nbrigsy = 7;
+  GLuint nbrigsx = 7;
 
   GLfloat marginx = 0.1;
   GLfloat marginy = 0.1;
@@ -1031,12 +1032,27 @@ Camera * populate_world_wall_of_brigs(World * world) {
 
   ball_object->set_ambient_color(glm::vec4(0.0,0.0,0.1,1.0));
   ball_object->set_diffusive_color(glm::vec4(0.0,0.0,0.5,1.0));
-  ball_object->set_scale(3.0);
-  ball_object->set_position(glm::vec4(-20,20,-2,1));
+  ball_object->set_scale(0.6);
+  ball_object->set_position(glm::vec4(-3,3,2,1));
   ball_object->set_moment_of_inertia_and_mass();
   world->add_child(ball_object);
 
-  ball_object->apply_impulse(glm::vec3(100,-100,10),ball_object->get_center_of_mass()+glm::vec3(ball_object->get_position()));
+  ball_object->apply_impulse(glm::vec3(0,-10,-0.5*64),ball_object->get_center_of_mass()+glm::vec3(ball_object->get_position()));
+
+  UniformColorCollisionObject * ball_object_2 = new UniformColorCollisionObject();
+  ball_object_2->set_program(uniprog);
+  ball_object_2->set_preferred_bounding_volume(BoundingGeometryType::SPHERE);
+  ball_object_2->set_shape(ball);
+
+  ball_object_2->set_ambient_color(glm::vec4(0.0,0.0,0.1,1.0));
+  ball_object_2->set_diffusive_color(glm::vec4(0.5,0.0,0.5,1.0));
+  ball_object_2->set_scale(2);
+  ball_object_2->set_position(glm::vec4(3,-3,20,1));
+  ball_object_2->set_moment_of_inertia_and_mass();
+  world->add_child(ball_object_2);
+
+  ball_object_2->apply_impulse(glm::vec3(0,1000,-5000),ball_object->get_center_of_mass()+glm::vec3(ball_object->get_position()));
+
 
   Light * light2 = new Light();
   Tetrahedron * tetr = new Tetrahedron();
@@ -1371,14 +1387,14 @@ Camera * populate_world_shadows(World * world) {
   light1->set_position(glm::vec4(-10,0,-20,1));
   light1->set_program(prog);
   light1->set_intensity(glm::vec4(0.0,0.0,100.0,1));
-  light1->set_kl(1.0);
+  light1->set_kl(20.0);
   //light1->set_render_flag(SHADOWCASTER);
   Light * light2 = new Light();
   light2->set_shape(tetr);
   light2->set_position(glm::vec4(10,0,-20,1));
   light2->set_program(prog);
   light2->set_intensity(glm::vec4(100.0,0.0,0.0,1));
-  light1->set_kl(1.0);
+  light2->set_kl(20.0);
   //light2->set_render_flag(SHADOWCASTER);
   //light1->disable();
   //light2->disable();
@@ -1406,9 +1422,13 @@ Camera * populate_world_shadows(World * world) {
   sphere_object->set_program(ambient,0);
   sphere_object->set_program(shadow_volumes_prog,1);
   sphere_object->set_program(lightning_prog,2);
-  sphere_object->set_ambient_color(glm::vec4(0.02,0.02,0.02,1));
+  sphere_object->set_ambient_color(glm::vec4(0.2,0.2,0.2,1.0));
+  sphere_object->set_diffusive_color(glm::vec4(1,1,1,1));
+  //sphere_object->set_specular_color(glm::vec4(50,50,50,1));
   sphere_object->set_position(glm::vec4(0,0,-10,1));
   sphere_object->set_render_flag(SHADOWABLE|SHADOWCASTER);
+  sphere_object->add_action(new OscillatorAction(1,12,glm::vec3(0,0,1),-1,-1));
+  sphere_object->set_scale(glm::vec3(0.5,0.5,0.5));
   world->add_child(sphere_object);
 
   sphere_object2->set_shape(ball);
@@ -1416,7 +1436,9 @@ Camera * populate_world_shadows(World * world) {
   sphere_object2->set_program(ambient,0);
   sphere_object2->set_program(shadow_volumes_prog,1);
   sphere_object2->set_program(lightning_prog,2);
-  sphere_object2->set_ambient_color(glm::vec4(0.02,0.02,0.02,1));
+  sphere_object2->set_ambient_color(glm::vec4(0.2,0.2,0.2,1.0));
+  sphere_object2->set_diffusive_color(glm::vec4(1,1,1,1));
+  //sphere_object2->set_specular_color(glm::vec4(50,50,50,1));
   sphere_object2->set_position(glm::vec4(-5,0,-5,1));
   sphere_object2->set_render_flag(SHADOWABLE|SHADOWCASTER);
   world->add_child(sphere_object2);
@@ -1438,12 +1460,12 @@ int main() {
   kt = new KeyTable();
 
   World * world = new World();
-  world->set_projection(ProjectionBuffer::create_perspective_projection_matrix(-1*aspect_ratio,1*aspect_ratio,-1,1,1.0,2000,5000));
+  world->set_projection(ProjectionBuffer::create_perspective_projection_matrix(-1*aspect_ratio,1*aspect_ratio,-1,1,1,2000,500));
   std::cout << "aspect ratio: " << aspect_ratio << "From main.cpp/main." << std::endl;
 
   // Camera * mv = populate_world_ring(world);
   // Camera * mv = populate_world_two_objects(world);
-  Camera * mv = populate_obb_test(world);
+  //Camera * mv = populate_obb_test(world);
   //Camera * mv = populate_world_wall_of_brigs(world);
   //Camera * mv = populate_world_bouncing_object(world);
   //Camera * mv = populate_world_junk(world);
@@ -1452,7 +1474,7 @@ int main() {
   //Camera * mv = populate_world_farthest_point_to_triangle(world);
   //Camera * mv = populate_world_convex_hull(world);
   //Camera * mv = populate_world_nvidia_test(world);
-  //Camera * mv = populate_world_shadows(world);
+  Camera * mv = populate_world_shadows(world);
   //Camera * mv = populate_world_geom_test(world);
 
   glClearColor(0.0,0.0,0.0,0.0);

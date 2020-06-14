@@ -1,6 +1,8 @@
 #ifndef UNIFORM_MATERIAL_BUFFER_HPP
 #define UNIFORM_MATERIAL_BUFFER_HPP
 
+#define GLM_FORCE_RADIANS
+#include <glm/glm.hpp>
 #include "buffer.hpp"
 
 class UniformMaterialBuffer : public Buffer {

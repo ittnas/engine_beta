@@ -373,7 +373,7 @@ GLboolean CollisionDetectionAlgorithms::intersection_between(const BoundingOBB *
     
     *depth_of_intersection = min_penetration;
     
-    std::cout << "True! Center a: " << center_a[0] << ", " << center_a[1] << ", " << center_a[2] << std::endl <<  "      Center b: " << center_b[0] << ", " << center_b[1] << ", " << center_b[2] << std::endl << "Point of intersection: " << (*point_of_intersection)[0] << ", " << (*point_of_intersection)[1] << ", " << (*point_of_intersection)[2] << "." << std::endl << "Normal of intersection: " << (*normal_of_intersection)[0] << ", " << (*normal_of_intersection)[1] << ", " << (*normal_of_intersection)[2] << ". Min penetration is " << min_penetration << ". Index: " << penetration_index <<" From collision_detection_algorithms.cpp." << std::endl;
+    //std::cout << "True! Center a: " << center_a[0] << ", " << center_a[1] << ", " << center_a[2] << std::endl <<  "      Center b: " << center_b[0] << ", " << center_b[1] << ", " << center_b[2] << std::endl << "Point of intersection: " << (*point_of_intersection)[0] << ", " << (*point_of_intersection)[1] << ", " << (*point_of_intersection)[2] << "." << std::endl << "Normal of intersection: " << (*normal_of_intersection)[0] << ", " << (*normal_of_intersection)[1] << ", " << (*normal_of_intersection)[2] << ". Min penetration is " << min_penetration << ". Index: " << penetration_index <<" From collision_detection_algorithms.cpp." << std::endl;
     return GL_TRUE;
   } else {
     return GL_TRUE;

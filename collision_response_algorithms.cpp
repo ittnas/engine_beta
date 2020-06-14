@@ -77,7 +77,7 @@ void CollisionResponseAlgorithms::collision_between(RigidBody * rb1, RigidBody *
   //rb2->apply_impulse(glm::vec3(30000,0,0),rb2->get_center_of_mass());
   glm::vec3 velocity_after1 = rb1->get_velocity() + rb1->get_velocity_delayed();
   glm::vec3 velocity_after2 = rb2->get_velocity() + rb2->get_velocity_delayed();
-  std::cout << "rb vs rb" << " v1 before: " << glm::length(velocity_before1) << " v1 after: " << glm::length(velocity_after1) << "| v2 before " << glm::length(velocity_before2) << " v2 after " << glm::length(velocity_after2) <<  " (from collision_response_algorithms.cpp)"<< std::endl;
+  //std::cout << "rb vs rb" << " v1 before: " << glm::length(velocity_before1) << " v1 after: " << glm::length(velocity_after1) << "| v2 before " << glm::length(velocity_before2) << " v2 after " << glm::length(velocity_after2) <<  " (from collision_response_algorithms.cpp)"<< std::endl;
 }
 
 void CollisionResponseAlgorithms::collision_between(RigidBody * rb, ShatteringRigidBody * srb, const CollisionPair & cp) {

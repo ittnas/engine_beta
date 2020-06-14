@@ -2,7 +2,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include "uniform_material_buffer.hpp"
 
-UniformMaterialBuffer::UniformMaterialBuffer() : Buffer("uniform_material_buffer",buffer_length),ambient_color(0,0,0,1),diffusive_color(0,0,0,1),specular_color(1,1,1,1),shininess(16) {
+UniformMaterialBuffer::UniformMaterialBuffer() : Buffer("uniform_material_buffer",buffer_length),ambient_color(0,0,0,1),diffusive_color(0,0,0,1),specular_color(0,0,0,1),shininess(16) {
   
 }
 

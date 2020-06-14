@@ -40,13 +40,14 @@ void ShadowVolumesRenderingFunction::perform_rendering(GLint tick, GLuint render
   glBlendFunc(GL_ONE, GL_ONE); // The blending function scr+dst, to add all the lighting
   glDepthMask(GL_FALSE);  // We stop writing to z-buffer now. We made this in the first pass, now we have it
   //glDepthFunc(GL_LEQUAL); // we put it again to LESS or EQUAL (or else you will get some z-fighting)
+  
   glDepthFunc(GL_LESS);
   glEnable(GL_STENCIL_TEST);
   for(auto & light : lights) {
     light.first->enable();
     glClear(GL_STENCIL_BUFFER_BIT);
     glColorMask(0,0,0,0);
-    //glColorMask(1,1,1,1);
+    //glColorMask(1,1,1,1); // Draw the shadow volumes
     glStencilFunc(GL_ALWAYS, 0, ~0);
     glStencilMask(~0);
     //glActiveStencilFaceEXT(GL_FRONT);
@@ -67,11 +68,11 @@ void ShadowVolumesRenderingFunction::perform_rendering(GLint tick, GLuint render
     glEnable(GL_CULL_FACE);
     glCullFace(GL_BACK);
     
-    //this->target_camera->update_world();
+    this->target_camera->update_world(); // Write light state
     this->target_camera->draw(tick,SHADOWABLE|SHADOWCASTER,2,OR,INDEXED);
     //this->target_camera->draw(tick,SHADOWABLE|SHADOWCASTER,0,OR,INDEXED);
     light.first->disable();
-    break;
+    //break;
   }
 
   for(auto & light : lights) {

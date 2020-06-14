@@ -6,7 +6,7 @@
 #include "movable.hpp"
 #include "gl_constants.hpp"
 
-LightningBuffer::LightningBuffer() : Buffer("light_buffer",buffer_length), intensity(glm::vec4(1,1,1,1)),exponent(64.0),cutoff(360),kc(1.0),kl(0.0),kq(0.0), is_active(GL_TRUE), light_index(0) {
+LightningBuffer::LightningBuffer() : Buffer("light_buffer",buffer_length), intensity(glm::vec4(1,1,1,1)),exponent(64.0),cutoff(360),kc(1.0),kl(0.0),kq(0.0), light_index(0), is_active(GL_TRUE) {
   
 }
 

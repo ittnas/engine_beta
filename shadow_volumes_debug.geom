@@ -62,7 +62,8 @@ void main() {
     gl_PositionIn[4]
 			    );
 
-  for(int ii=0;ii<MAX_NBR_LIGHTS;ii++) {
+  for(int ii=1;ii<MAX_NBR_LIGHTS;ii++) {
+  //for(int ii=0;ii<nbr_active_lights;ii++) {
     if(lights[ii].is_active) {
       l_pos = lights[ii].position;
       break;

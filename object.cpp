@@ -7,7 +7,7 @@
 #include "uniform_list.hpp"
 #include "uniform_container.hpp"
 
-Object::Object() : shape(0), parent(0),render_flag(0), world(0) {
+Object::Object() : shape(0), parent(0), world(0), render_flag(0) {
   
 }
 
@@ -58,7 +58,7 @@ std::vector<Object *> Object::get_children() {
 }
 
 GLuint Object::get_program_ident(GLuint program_position) {
-  get_program(program_position)->get_program_ident();
+  return get_program(program_position)->get_program_ident();
 }
 
 void Object::set_shape(Shape * shape) {
